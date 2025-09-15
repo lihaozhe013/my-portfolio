@@ -1,0 +1,39 @@
+{
+  "name": "portfolio-page",
+  "version": "1.0.0",
+  "description": "Portfolio page - React app",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf dist",
+    "dev": "vite",
+    "format-prettier": "prettier --write .",
+    "preinstall": "npx only-allow pnpm",
+    "preview": "vite preview",
+    "sort-json": "jsonsort src/**/*.json",
+    "format": "pnpm sort-json && pnpm format-prettier"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.23",
+    "i18next": "^26.3.6",
+    "prettier": "^3.9.6",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-i18next": "^17.0.11",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.18.2",
+    "remark-gfm": "^4.0.1",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@types/three": "^0.185.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "actions": {
+    "backToProjects": "返回项目列表",
+    "close": "关闭",
+    "email": "发送邮件",
+    "openLink": "打开链接",
+    "readDetails": "阅读详细",
+    "readProject": "阅读项目",
+    "selectedWorks": "查看精选作品"
+  },
+  "contact": {
+    "email": "邮箱",
+    "github": "GitHub",
+    "introduction": "如果你想聊聊项目、合作机会，或者只是进行一次认真交流，欢迎通过邮件联系我。",
+    "linkedin": "LinkedIn",
+    "website": "个人网站"
+  },
+  "education": {
+    "coursework": {
+      "algorithms-and-data-structures": "算法与数据结构",
+      "communication-systems": "通信系统",
+      "computer-hardware": "计算机硬件",
+      "computer-organization": "计算机组成",
+      "digital-systems": "数字系统",
+      "introduction-to-databases": "数据库导论",
+      "operating-systems": "操作系统",
+      "software-design-and-communication": "软件设计与交流"
+    },
+    "degree": "计算机工程应用科学学士",
+    "institution": "多伦多大学"
+  },
+  "hero": {
+    "availability": "...",
+    "eyebrow": "电气与计算机工程 / 多伦多大学",
+    "headline": "",
+    "introduction": "我目前是多伦多大学四年级工程学生。",
+    "portraitCaption": "一份仍在持续书写的工作档案。"
+  },
+  "labels": {
+    "coursework": "相关课程",
+    "featured": "精选",
+    "language": "语言",
+    "technologies": "使用技术"
+  },
+  "nav": {
+    "about": "关于",
+    "contact": "联系",
+    "index": "首页",
+    "label": "主导航",
+    "timeline": "时间线"
+  },
+  "pages": {
+    "about": {
+      "introduction": "",
+      "title": ""
+    },
+    "contact": {
+      "introduction": "如果你想聊聊项目，或者只是进行一次认真交流，欢迎通过邮件联系我。",
+      "title": "一起认真做点东西。"
+    },
+    "timeline": {
+      "introduction": "",
+      "title": "一份正在形成的记录。"
+    }
+  },
+  "projects": {
+    "dinosaur-game": {
+      "description": "基于 STM32 MCU 实现的嵌入式游戏项目，包含自定义图形、输入处理与 OLED 显示。",
+      "title": "Dinosaur Game 恐龙游戏"
+    },
+    "gis-route-optimization": {
+      "description": "使用 C++ 与 GTK 构建的地理信息系统，包含实时路径规划算法与交互式地图可视化。",
+      "title": "GIS 路线优化应用"
+    },
+    "greedy-mouse-game": {
+      "description": "基于 FPGA 和 Verilog 实现的硬件游戏项目，包含自定义图形与输入处理。",
+      "title": "Greedy Mouse Game 贪吃鼠游戏"
+    },
+    "license-plate-recognition": {
+      "description": "使用 PyTorch 训练的安大略车牌识别系统，由 CNN 边界框层与 CRNN 字符识别层组成。",
+      "title": "车牌识别系统"
+    },
+    "runner-game": {
+      "description": "基于 RISC-V 处理器实现的嵌入式游戏，包含自定义图形与输入处理。",
+      "title": "Runner Game 跑酷游戏"
+    },
+    "streamfile-server": {
+      "description": "轻量、无数据库的资源托管服务器，支持 Markdown、媒体播放、网页托管、私有链接、上传与搜索。",
+      "title": "StreamFile Server"
+    },
+    "tradeflow-system": {
+      "description": "为小型企业设计、开发并部署的全栈交易管理 Web 应用。",
+      "title": "TradeFlow System"
+    }
+  },
+  "sections": {
+    "about": "关于我",
+    "archive": "项目档案",
+    "contact": "联系",
+    "education": "教育经历",
+    "selectedWorks": "精选作品",
+    "skills": "技术索引",
+    "timeline": "时间线"
+  },
+  "site": {
+    "description": "李昊喆的作品集。",
+    "title": "李昊喆 — 作品集"
+  },
+  "skillGroups": {
+    "languages": "编程语言",
+    "tools": "工具与设计",
+    "web-and-infrastructure": "Web 与基础设施"
+  }
+}

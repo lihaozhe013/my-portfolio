@@ -1,0 +1,119 @@
+{
+  "actions": {
+    "backToProjects": "Back to projects",
+    "close": "Close",
+    "email": "Write an email",
+    "openLink": "Open link",
+    "readDetails": "Read detailed case study",
+    "readProject": "Read project",
+    "selectedWorks": "View selected works"
+  },
+  "contact": {
+    "email": "Email",
+    "github": "GitHub",
+    "introduction": "For a project, a co-op opportunity, or a thoughtful conversation, the best place to find me is email.",
+    "linkedin": "LinkedIn",
+    "website": "Personal Website"
+  },
+  "education": {
+    "coursework": {
+      "algorithms-and-data-structures": "Algorithms & Data Structures",
+      "communication-systems": "Communication Systems",
+      "computer-graphics": "Computer Graphics",
+      "computer-hardware": "Computer Hardware",
+      "computer-organization": "Computer Organization",
+      "digital-systems": "Digital Systems",
+      "introduction-to-databases": "Introduction to Databases",
+      "operating-systems": "Operating Systems",
+      "software-design-and-communication": "Software Design & Communication"
+    },
+    "degree": "B.A.Sc. in Computer Engineering",
+    "institution": "University of Toronto"
+  },
+  "hero": {
+    "availability": "",
+    "eyebrow": "Electrical & Computer Engineering · University of Toronto",
+    "headline": "Creative · Empathetic",
+    "introduction": "4th year ECE student at the University of Toronto",
+    "portraitCaption": ""
+  },
+  "labels": {
+    "coursework": "Relevant coursework",
+    "featured": "Featured",
+    "language": "Language",
+    "technologies": "Built with"
+  },
+  "nav": {
+    "about": "About",
+    "contact": "Contact",
+    "index": "Index",
+    "label": "Primary navigation",
+    "timeline": "Timeline"
+  },
+  "pages": {
+    "about": {
+      "introduction": "Computer Engineering student working across software, video games, and interactive projects. I like understanding why something feels intuitive, where complexity hides, and what happens when people do things differently from how it was imagined.\nAway from code: films, music, fiction, games, and esports.",
+      "title": "About Me"
+    },
+    "contact": {
+      "introduction": "The best place to find me is email.",
+      "title": "Let's make something careful."
+    },
+    "timeline": {
+      "introduction": "A working timeline of video games, software, and embedded system projects.",
+      "title": "A record of things made."
+    }
+  },
+  "projects": {
+    "battle-royal-moba": {
+      "description": "A Battle Royal Moba Game",
+      "title": "Battle Royal Moba Game"
+    },
+    "dinosaur-game": {
+      "description": "An embedded systems project featuring a dinosaur game implemented on an STM32 MCU with custom graphics and input handling.",
+      "title": "Dinosaur Game"
+    },
+    "gis-route-optimization": {
+      "description": "A geographic information system built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
+      "title": "GIS Route Optimization Application"
+    },
+    "greedy-mouse-game": {
+      "description": "An FPGA project featuring a game implemented with Verilog, custom graphics, and hardware input handling.",
+      "title": "Greedy Mouse Game"
+    },
+    "license-plate-recognition": {
+      "description": "An Ontario-style license plate recognition system trained with PyTorch, combining a CNN bounding-box layer and a CRNN character-recognition layer.",
+      "title": "License Plate Recognition System"
+    },
+    "runner-game": {
+      "description": "An embedded systems project featuring a runner game implemented on a RISC-V processor with custom graphics and input handling.",
+      "title": "Runner Game"
+    },
+    "streamfile-server": {
+      "description": "A lightweight, database-free resource hosting server with markdown rendering, media playback, webpage hosting, private links, uploads, and search.",
+      "title": "StreamFile Server"
+    },
+    "tradeflow-system": {
+      "description": "A full-stack trade management web app built for a small business, developed and deployed from design through production. ",
+      "title": "TradeFlow System"
+    }
+  },
+  "sections": {
+    "about": "About",
+    "archive": "Project archive",
+    "contact": "Contact",
+    "education": "Education",
+    "selectedWorks": "Selected works",
+    "skills": "Technical index",
+    "timeline": "Timeline"
+  },
+  "site": {
+    "description": "The portfolio of Haozhe Li.",
+    "title": "Haozhe Li — Portfolio"
+  },
+  "skillGroups": {
+    "languages": "Languages",
+    "tools": "Tools & design",
+    "web-and-infrastructure": "Web & infrastructure"
+  }
+}
