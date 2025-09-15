@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // GitHub Pages serves project sites under /<repo>/, set base accordingly
-  base: '/liihaozhe-portfolio-page-portfolio/',
+  // Use relative base so assets load correctly under any subpath (e.g., GitHub Pages project sites)
+  base: './',
   plugins: [react()],
   build: {
     outDir: 'dist',
