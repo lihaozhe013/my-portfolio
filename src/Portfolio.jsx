@@ -24,33 +24,6 @@ import {
 const Portfolio = () => {
   const projects = [
     {
-      title: "ECE297 Project - GIS Mapping System",
-      description:
-        "A comprehensive Geographic Information System built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
-      technologies: [
-        "C++",
-        "GTK",
-        "TomTom API",
-        "Algorithms",
-        "Dijkstra",
-        "A*",
-      ],
-      links: [
-        { label: "GitHub", href: "#", type: "github" },
-        { label: "Detail", href: "#", type: "external" },
-      ],
-    },
-    {
-      title: "ECE243 Runner Game",
-      description:
-        "An embedded systems project featuring a runner game implemented on RISC-V processor with custom graphics and input handling.",
-      technologies: ["C", "RISC-V Assembly", "Embedded Systems"],
-      links: [
-        { label: "GitHub", href: "#", type: "github" },
-        { label: "Detail", href: "#", type: "external" },
-      ],
-    },
-    {
       title: "Simple ERP System",
       description:
         "A web-based Enterprise Resource Planning system with inventory management, user authentication, and reporting capabilities.",
@@ -68,10 +41,39 @@ const Portfolio = () => {
         "AntD",
       ],
       links: [
-        { label: "GitHub", href: "#", type: "github" },
-        { label: "Demo", href: "#", type: "external" },
+        { label: "GitHub", href: "https://github.com/lihaozhe013/myf-lightweight-ERP-system", type: "github" },
+        { label: "Demo", href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/simple-erp-system/", type: "external" },
       ],
     },
+    {
+      title: "ECE297 Project - GIS Mapping System",
+      description:
+        "A comprehensive Geographic Information System built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
+      technologies: [
+        "C++",
+        "GTK",
+        "TomTom API",
+        "Algorithms",
+        "Dijkstra",
+        "A*",
+        "Greedy Algorithm"
+      ],
+      links: [
+        { label: "Presentation", href: "https://lihaozhe013.github.io/lihaozhe-portfolio/documents/ECE297-OP2.pdf", type: "external" },
+        { label: "Detail", href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece297-project/", type: "external" },
+      ],
+    },
+    {
+      title: "ECE243 Runner Game",
+      description:
+        "An embedded systems project featuring a runner game implemented on RISC-V processor with custom graphics and input handling.",
+      technologies: ["C", "RISC-V Assembly", "Embedded Systems"],
+      links: [
+        { label: "GitHub", href: "https://github.com/lihaozhe013/ece243_runner_game", type: "github" },
+        { label: "Detail", href: "https://lihaozhe013.github.io/lihaozhe-portfolio/posts/ece243-project-runner-game/", type: "external" },
+      ],
+    },
+
   ];
 
   const skills = [
@@ -103,7 +105,7 @@ const Portfolio = () => {
         <Box className="text-center mb-16">
           <Avatar
             sx={{ width: 150, height: 150, margin: "0 auto 2rem" }}
-            src="/avatar.jpg"
+            src="/src/assets/avatar.jpg"
             alt="Haozhe Li"
           />
           <Typography
@@ -269,8 +271,8 @@ const Portfolio = () => {
             University of Toronto
           </Typography>
           <Typography variant="body2" className="text-gray-300">
-            Relevant Coursework: Data Structures & Algorithms, Computer
-            Organization, Software Engineering, Digital Systems
+            Relevant Coursework: Algorithms and Data Structures, Computer
+            Organization, Communication Systems, Digital Systems, Introductory Electronics
           </Typography>
         </Paper>
       </Container>
