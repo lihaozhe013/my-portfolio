@@ -32,7 +32,7 @@ const Portfolio = () => {
     {
       title: "TradeFlow Core",
       description:
-        "A web-based Enterprise Resource Planning system with inventory management, user authentication, and reporting capabilities.",
+        "A web-based lightweight modular platform for managing trade orders, inventory, and pricing with stateless authentication, role-based access control, i18n, and excel export.",
       technologies: [
         "React",
         "Node.js",
@@ -62,7 +62,7 @@ const Portfolio = () => {
     {
       title: "StreamFile Server",
       description:
-        "An lightweight, database-free static resource hosting server supporting markdown, video/audio playback, webpage hosting, private link generation, file upload, and search functionality",
+        "An lightweight, database-free static resource hosting server supporting markdown, video/audio playback, webpage hosting, private link generation, file upload, and search functionality.",
       technologies: [
         "Go",
         "Gin",
