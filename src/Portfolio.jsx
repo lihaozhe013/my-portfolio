@@ -86,6 +86,11 @@ const Portfolio = () => {
           href: "https://github.com/lihaozhe013/streamfile-server-nodejs",
           type: "github",
         },
+        {
+          label: "Screenshots",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/streamfile-server/",
+          type: "external",
+        },
       ],
     },
     {
