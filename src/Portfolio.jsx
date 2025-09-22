@@ -30,7 +30,7 @@ import avatarImage from "./assets/avatar.jpg";
 const Portfolio = () => {
   const projects = [
     {
-      title: "TradeFlow Core",
+      title: "TradeFlow System",
       description:
         "A web-based lightweight modular platform for managing trade orders, inventory, and pricing with stateless authentication, role-based access control, i18n, and excel export.",
       technologies: [
@@ -54,7 +54,7 @@ const Portfolio = () => {
         },
         {
           label: "Demo",
-          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-core/",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
           type: "external",
         },
       ],
