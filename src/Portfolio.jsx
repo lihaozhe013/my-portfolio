@@ -25,7 +25,7 @@ import {
 } from "@mui/icons-material";
 import { DarkMode, LightMode } from '@mui/icons-material'
 import { useColorMode } from './App'
-import avatarImage from "./assets/avatar.jpg";
+import avatarImage from "./assets/avatar.png";
 
 const Portfolio = () => {
   const projects = [
