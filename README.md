@@ -1,5 +1,5 @@
 ## Introduction
-This portfolio is based on React.js + MUI + vite.
+This portfolio is built with React, TypeScript, MUI, and Vite, with Tailwind CSS for utility styling.
 
 ### Install Dependencies
 ```
@@ -15,3 +15,6 @@ npm run dev
 ```
 npm run build
 ```
+
+### TypeScript Configuration
+Type definitions live under `src/` and are managed via `tsconfig.json` with strict mode enabled. Modify the configuration if you need to relax checks for experimentation.
