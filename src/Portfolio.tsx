@@ -48,17 +48,15 @@ const projects: Project[] = [
     description:
       'A web-based lightweight modular platform for managing trade orders, inventory, and pricing with stateless authentication, role-based access control, i18n, and excel export.',
     technologies: [
-      'React',
+      'React.js',
       'Node.js',
-      'Express',
       'SQLite',
       'AWS',
-      'RHEL',
-      'Debian',
       'HTML',
       'CSS',
       'Tailwind CSS',
-      'AntD',
+      'Ant Design',
+      'TypeScript'
     ],
     links: [
       {
@@ -81,13 +79,12 @@ const projects: Project[] = [
       'Go',
       'Gin',
       'Node.js',
-      'Express',
-      'Multer',
+      'React.js',
       'Rust',
       'Video.js',
       'Tailwind CSS',
       'HTML',
-      'JavaScript',
+      'TypeScript',
     ],
     links: [
       {
@@ -137,7 +134,7 @@ const projects: Project[] = [
     title: 'Runner Game - ECE243 Project',
     description:
       'An embedded systems project featuring a runner game implemented on RISC-V processor with custom graphics and input handling.',
-    technologies: ['C', 'RISC-V Assembly', 'Embedded Systems'],
+    technologies: ['C', 'RISC-V Assembly', 'Embedded Systems', 'CPULator'],
     links: [
       {
         label: 'GitHub',
