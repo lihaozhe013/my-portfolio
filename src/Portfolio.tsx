@@ -128,7 +128,7 @@ const projects: Project[] = [
       },
       {
         label: 'Detail',
-        href: 'https://lihaozhe013.github.io/lihaozhe-website/posts/gis-route-optimization-application-ece297-course-project/',
+        href: 'https://lihaozhe013.github.io/lihaozhe-website/posts/gis-route-optimization-application/',
         type: 'external',
       },
     ],
