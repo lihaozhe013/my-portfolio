@@ -130,7 +130,7 @@ const Portfolio = (): JSX.Element => {
               <Chip
                 key={skill}
                 label={skill}
-                className="bg-indigo-600 text-white hover:bg-indigo-700"
+                className="bg-indigo-600 text-white hover:bg-indigo-700 hover:text-white"
                 sx={{ borderRadius: '12px' }}
               />
             ))}
