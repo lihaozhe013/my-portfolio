@@ -17,27 +17,27 @@ const headline: string = "3rd Year Computer Engineering Student @ UofT"
 
 const aboutMe: string = "Passionate about creating innovative solutions through code. Currently learning full-stack development, embedded systems, and algorithms.";
 
-const relevant_coursework: string[] = ['Algorithms and Data Structures', 'Computer Organization', 'Communication Systems', 'Digital Systems', 'Introductory Electronics']
+const relevant_coursework: string[] = ['Algorithms and Data Structures', 'Computer Organization', 'Software Design and Communication', 'Communication Systems', 'Digital Systems', 'Introductory Electronics']
 
 const skills: string[] = [
   'JavaScript',
   'TypeScript',
-  'React',
+  'React.js',
   'Node.js',
-  'Python',
-  'C++',
   'C',
-  'Java',
-  'SQLite',
+  'C++',
+  'C#',
+  'Python',
   'Git',
   'DevOps',
+  'GitHub',
+  'GitHub Actions',
   'AWS',
-  'RHEL',
+  'Ubuntu',
   'Debian',
-  'HTML',
-  'CSS',
+  'SQLite',
   'Tailwind CSS',
-  'AntD',
+  'Ant Design',
 ]
 
 const projects: Project[] = [
@@ -49,12 +49,13 @@ const projects: Project[] = [
       'React.js',
       'Node.js',
       'SQLite',
+      'Vite',
       'AWS',
-      'HTML',
-      'CSS',
       'Tailwind CSS',
       'Ant Design',
-      'TypeScript'
+      'TypeScript',
+      'JavaScript',
+      'Nginx',
     ],
     links: [
       {
