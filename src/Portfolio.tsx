@@ -27,8 +27,9 @@ import {
 import avatarImage from './assets/avatar.png'
 import { useColorMode } from './App'
 
-import projects from './content'
-import { skills, relevant_coursework, aboutMe, headline } from './content'
+import Content_Class from './content'
+
+const Content = new Content_Class()
 
 const Portfolio = (): JSX.Element => {
   const { mode, toggleColorMode } = useColorMode()
@@ -64,7 +65,7 @@ const Portfolio = (): JSX.Element => {
             Haozhe Li
           </Typography>
           <Typography variant="h5" className="pb-6 mb-6 text-slate-600 dark:text-gray-300">
-            {headline}
+            {Content.headline}
           </Typography>
           <Typography
             variant="body1"
@@ -72,7 +73,7 @@ const Portfolio = (): JSX.Element => {
             className="mb-8 pb-8 text-slate-600 dark:text-gray-400"
             sx={{ textAlign: 'center', maxWidth: '42rem', mx: 'auto' }}
           >
-            {aboutMe}
+            {Content.aboutMe}
           </Typography>
           <Box className="flex justify-center gap-4 mt-3">
             <Button
@@ -126,7 +127,7 @@ const Portfolio = (): JSX.Element => {
         </Typography>
         <Paper className="p-6 mb-10 bg-white dark:bg-slate-800" sx={{ borderRadius: '20px' }}>
           <Box className="flex flex-wrap gap-2 mt-2">
-            {skills.map((skill) => (
+            {Content.skills.map((skill) => (
               <Chip
                 key={skill}
                 label={skill}
@@ -142,7 +143,7 @@ const Portfolio = (): JSX.Element => {
           Featured Projects
         </Typography>
         <Grid container spacing={4} className="mb-10 pt-4">
-          {projects.map((project) => (
+          {Content.projects.map((project) => (
             <Grid item xs={12} md={6} lg={4} key={project.title}>
               <Card
                 className="h-full bg-yellow-50 text-slate-800 dark:bg-slate-800 dark:text-white transition-colors"
@@ -204,7 +205,7 @@ const Portfolio = (): JSX.Element => {
             University of Toronto
           </Typography>
           <Typography variant="body2" className="text-slate-600 dark:text-gray-300">
-            Relevant Coursework: {relevant_coursework.join(', ')}
+            Relevant Coursework: {Content.relevant_coursework.join(', ')}
           </Typography>
         </Paper>
       </Container>
