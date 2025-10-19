@@ -24,7 +24,7 @@ import {
   DarkMode,
   LightMode,
 } from '@mui/icons-material'
-import avatarImage from './assets/avatar.png'
+import avatarImage from './assets/photo.png'
 import { useColorMode } from './App'
 
 import projects from './content'
