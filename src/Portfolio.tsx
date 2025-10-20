@@ -56,7 +56,7 @@ const Portfolio = (): JSX.Element => {
               width: 150,
               height: 150,
               margin: '0 auto 2rem',
-              borderRadius: '20px',
+              borderRadius: '1000px',
             }}
             src={avatarImage}
             alt="Haozhe Li"
