@@ -29,24 +29,24 @@ class Content_Class {
   ];
 
   skills: string[] = [
-    "JavaScript",
     "TypeScript",
     "React.js",
     "Node.js",
     "C",
     "C++",
     "C#",
+    "Java",
     "Python",
     "Git",
-    "DevOps",
     "GitHub",
     "GitHub Actions",
     "AWS",
     "Ubuntu",
-    "Debian",
     "SQLite",
     "Tailwind CSS",
     "Ant Design",
+    "Figma",
+    "LaTeX"
   ];
 
   projects: Project[] = [
