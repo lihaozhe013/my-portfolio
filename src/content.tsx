@@ -38,7 +38,7 @@ class Content_Class {
     "Java",
     "Python",
     "Git",
-    "GitHub",
+    "Docker",
     "GitHub Actions",
     "AWS",
     "Ubuntu",
@@ -55,16 +55,19 @@ class Content_Class {
       description:
         "A web-based lightweight modular platform for managing trade orders, inventory, and pricing with stateless authentication, role-based access control, i18n, and excel export.",
       technologies: [
+        "TypeScript",
         "React.js",
         "Node.js",
+        "Express",
         "SQLite",
         "Vite",
+        "Docker",
         "AWS",
         "Tailwind CSS",
         "Ant Design",
-        "TypeScript",
-        "JavaScript",
+        "GitHub Actions",
         "Nginx",
+        "PM2"
       ],
       links: [
         {
@@ -73,7 +76,7 @@ class Content_Class {
           type: "github",
         },
         {
-          label: "Demo",
+          label: "Demo & Details",
           href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
           type: "external",
         },
@@ -88,10 +91,9 @@ class Content_Class {
         "Gin",
         "Node.js",
         "React.js",
-        "Rust",
+        "Vite",
         "Video.js",
         "Tailwind CSS",
-        "HTML",
         "TypeScript",
       ],
       links: [
@@ -124,6 +126,7 @@ class Content_Class {
         "Dijkstra",
         "A*",
         "Greedy Algorithm",
+        "Git"
       ],
       links: [
         {
@@ -142,7 +145,7 @@ class Content_Class {
       title: "Runner Game - ECE243 Project",
       description:
         "An embedded systems project featuring a runner game implemented on RISC-V processor with custom graphics and input handling.",
-      technologies: ["C", "RISC-V Assembly", "Embedded Systems", "CPULator"],
+      technologies: ["C", "RISC-V Assembly", "Embedded Systems", "CPULator", "Git"],
       links: [
         {
           label: "GitHub",
