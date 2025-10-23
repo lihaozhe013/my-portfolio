@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState, createContext, useContext } from 'react'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
-import Portfolio from './Portfolio'
+import Portfolio from '@/Portfolio'
 
 type ColorMode = 'light' | 'dark'
 

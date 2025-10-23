@@ -24,10 +24,10 @@ import {
   DarkMode,
   LightMode,
 } from '@mui/icons-material'
-import avatarImage from './assets/photo.png'
-import { useColorMode } from './App'
+import avatarImage from '@/assets/photo.png'
+import { useColorMode } from '@/App'
 
-import Content_Class from './content'
+import Content_Class from '@/content'
 
 const Content = new Content_Class()
 
