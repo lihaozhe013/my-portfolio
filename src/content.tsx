@@ -17,7 +17,7 @@ class Content_Class {
   headline: string = "3rd Year Computer Engineering Student @ UofT";
 
   aboutMe: string =
-    "Passionate about creating innovative solutions through code. Currently learning full-stack development, embedded systems, and algorithms.";
+    "Passionate about creating innovative solutions through code. Intersted in Cloud and DevOps, currently learning full-stack development, operating systems, computer networks and algorithms.";
 
   relevant_coursework: string[] = [
     "Algorithms and Data Structures",
@@ -34,40 +34,38 @@ class Content_Class {
     "Node.js",
     "C",
     "C++",
-    "C#",
-    "Java",
-    "Python",
     "Git",
     "Docker",
     "GitHub Actions",
     "AWS",
+    "Java",
+    "C#",
     "Ubuntu",
     "SQLite",
-    "Tailwind CSS",
+    "Python",
     "Ant Design",
+    "Tailwind CSS",
     "Figma",
-    "LaTeX"
+    "LaTeX",
   ];
 
   projects: Project[] = [
     {
       title: "TradeFlow System",
       description:
-        "A web-based lightweight modular platform for managing trade orders, inventory, and pricing with stateless authentication, role-based access control, i18n, and excel export.",
+        "A full-stack trade management web app built for a small business, developed and deployed by me from design to production.",
       technologies: [
         "TypeScript",
         "React.js",
         "Node.js",
-        "Express",
+        "Express.js",
+        "Decimal.js",
+        "Sheet.js",
+        "JSONWebToken",
         "SQLite",
         "Vite",
-        "Docker",
-        "AWS",
         "Tailwind CSS",
         "Ant Design",
-        "GitHub Actions",
-        "Nginx",
-        "PM2"
       ],
       links: [
         {
@@ -75,8 +73,23 @@ class Content_Class {
           href: "https://github.com/lihaozhe013/myf-tradeflow-core",
           type: "github",
         },
+      ],
+    },
+    {
+      title: "TradeFlow System Infrastructure",
+      description:
+        "Deployed the TradeFlow System on AWS, implementing CI Using GitHub Actions and Docker. Below are screenshots and links to my Pre-Production environment (which also serves as my Demo).",
+      technologies: [
+        "Docker",
+        "AWS",
+        "GitHub Actions",
+        "Nginx",
+        "PM2",
+        "CI/CD",
+      ],
+      links: [
         {
-          label: "Demo & Details",
+          label: "Demo & Screenshots",
           href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
           type: "external",
         },
@@ -115,7 +128,7 @@ class Content_Class {
       ],
     },
     {
-      title: "GIS Route Optimization Application - ECE297 Project",
+      title: "GIS Route Optimization Application - Course Project",
       description:
         "A comprehensive Geographic Information System built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
       technologies: [
@@ -126,7 +139,7 @@ class Content_Class {
         "Dijkstra",
         "A*",
         "Greedy Algorithm",
-        "Git"
+        "Git",
       ],
       links: [
         {
@@ -142,10 +155,16 @@ class Content_Class {
       ],
     },
     {
-      title: "Runner Game - ECE243 Project",
+      title: "Runner Game - Course Project",
       description:
         "An embedded systems project featuring a runner game implemented on RISC-V processor with custom graphics and input handling.",
-      technologies: ["C", "RISC-V Assembly", "Embedded Systems", "CPULator", "Git"],
+      technologies: [
+        "C",
+        "RISC-V Assembly",
+        "Embedded Systems",
+        "CPULator",
+        "Git",
+      ],
       links: [
         {
           label: "GitHub",
@@ -160,7 +179,7 @@ class Content_Class {
       ],
     },
     {
-      title: "Greedy Mouse Game - ECE241 Project",
+      title: "Greedy Mouse Game - Course Project",
       description:
         "An embedded systems project featuring a runner game implemented on FPGA board with custom graphics and input handling.",
       technologies: [
@@ -175,19 +194,6 @@ class Content_Class {
           label: "Presentation Slides",
           href: "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ece241-final-presentation.pdf",
           type: "external",
-        },
-      ],
-    },
-    {
-      title: "Git Snapshot Tool",
-      description:
-        "A tool with GUI that can auto fetch, pull, commit and push markdown notes to github with one click.",
-      technologies: ["Tauri", "Rust", "JavaScript"],
-      links: [
-        {
-          label: "Github",
-          href: "https://github.com/lihaozhe013/git-snapshot-tauri",
-          type: "github",
         },
       ],
     },
