@@ -69,7 +69,7 @@ const Portfolio = () => {
           <Typography
             variant="h2"
             component="h1"
-            className="mb-4 pb-4 font-bold text-slate-900 dark:text-white"
+            className="mb-4 pb-4 font-bold! text-slate-900 dark:text-white"
           >
             Haozhe Li
           </Typography>
@@ -94,7 +94,7 @@ const Portfolio = () => {
               href="https://github.com/lihaozhe013"
               target="_blank"
               rel="noreferrer"
-              className="bg-indigo-600 hover:bg-indigo-700"
+              className="bg-indigo-600 hover:bg-amber-500! dark:bg-indigo-500! dark:hover:bg-amber-500!"
               sx={{ borderRadius: "12px" }}
             >
               GitHub
@@ -105,7 +105,7 @@ const Portfolio = () => {
               href="https://linkedin.com/in/lihaozhe013"
               target="_blank"
               rel="noreferrer"
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-indigo-600 hover:bg-amber-500! dark:bg-indigo-500! dark:hover:bg-amber-500!"
               sx={{ borderRadius: "12px" }}
             >
               LinkedIn
@@ -116,7 +116,7 @@ const Portfolio = () => {
               href="https://lihaozhe013.github.io/lihaozhe-website/"
               target="_blank"
               rel="noreferrer"
-              className="border-gray-400 text-slate-700 dark:border-gray-500 dark:text-gray-300 hover:border-gray-500 dark:hover:border-gray-400"
+              className="bg-indigo-600 hover:bg-amber-500! dark:bg-indigo-500! dark:hover:bg-amber-500!"
               sx={{ borderRadius: "12px" }}
             >
               My Website
@@ -125,7 +125,7 @@ const Portfolio = () => {
               variant="contained"
               startIcon={<Email />}
               href="mailto:lihaozhe013@gmail.com"
-              className="border-gray-400 text-slate-700 dark:border-gray-500 dark:text-gray-300 hover:border-gray-500 dark:hover:border-gray-400"
+              className="bg-indigo-600 hover:bg-amber-500! dark:bg-indigo-500! dark:hover:bg-amber-500!"
               sx={{ borderRadius: "12px" }}
             >
               Email Me
@@ -150,8 +150,6 @@ const Portfolio = () => {
               <Chip
                 key={skill}
                 label={skill}
-                className="bg-indigo-600 text-white hover:bg-indigo-700 hover:text-white"
-                sx={{ borderRadius: "12px" }}
               />
             ))}
           </Box>
@@ -169,7 +167,6 @@ const Portfolio = () => {
           {Content.projects.map((project) => (
             <Box key={project.title} className="flex">
               <Card
-                className="bg-yellow-50 text-slate-800 dark:bg-slate-800 dark:text-white transition-colors"
                 sx={{
                   borderRadius: "16px",
                   display: "flex",
@@ -208,16 +205,15 @@ const Portfolio = () => {
                       <Button
                         key={link.label}
                         size="small"
+                        variant="text"
+                        color="inherit"
                         startIcon={
                           link.type === "github" ? <GitHub /> : <Launch />
                         }
                         href={link.href}
                         target="_blank"
                         rel="noreferrer"
-                        className={
-                          link.type === "github"
-                            ? "text-indigo-600 hover:text-amber-500 dark:text-indigo-400 dark:hover:text-amber-300"
-                            : "text-amber-600 hover:text-amber-500 dark:text-indigo-400 dark:hover:text-amber-300"
+                        className={ "text-indigo-600! hover:text-amber-500! dark:text-indigo-400! dark:hover:text-amber-500!"
                         }
                         sx={{ borderRadius: "10px" }}
                       >
