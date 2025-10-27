@@ -20,12 +20,14 @@ class Content_Class {
     "Passionate about creating innovative solutions through code. Intersted in Cloud and DevOps, currently learning full-stack development, operating systems, computer networks and algorithms.";
 
   relevant_coursework: string[] = [
-    "Algorithms and Data Structures",
+    "Algorithms & Data Structures",
+    "Computer Hardware",
+    "Operating Systems",
+    "Introduction to Databases",
     "Computer Organization",
-    "Software Design and Communication",
+    "Software Design & Communication",
     "Communication Systems",
     "Digital Systems",
-    "Introductory Electronics",
   ];
 
   skills: string[] = [
