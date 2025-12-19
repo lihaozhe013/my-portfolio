@@ -72,7 +72,7 @@ class Content_Class {
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/lihaozhe013/myf-tradeflow-core",
+          href: "https://github.com/lihaozhe013/tradeflow-core",
           type: "github",
         },
       ],
