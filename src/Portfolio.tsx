@@ -23,7 +23,7 @@ import {
   DarkMode,
   LightMode,
 } from "@mui/icons-material";
-import avatarImage from "@/assets/photo.png";
+import avatarImage from "@/assets/photo.jpg";
 import { useColorMode } from "@/App";
 
 import Content_Class from "@/content";
