@@ -97,7 +97,7 @@ class Content_Class {
         "Debian",
         "Ubuntu",
         "Linux",
-        "Bash"
+        "Bash",
       ],
       links: [
         {
@@ -110,26 +110,26 @@ class Content_Class {
     {
       title: "StreamFile Server",
       description:
-        "An lightweight, database-free static resource hosting server supporting markdown, video/audio playback, webpage hosting, private link generation, file upload, and search functionality.",
+        "A lightweight, database-free static resource hosting server with markdown rendering, video/audio playback, webpage hosting, private link generation, file upload, and file search features.",
       technologies: [
-        "Go",
-        "Gin",
+        "TypeScript",
         "Node.js",
-        "React.js",
+        "React",
         "Vite",
+        "Express",
         "Video.js",
         "Tailwind CSS",
-        "TypeScript",
+        "Docker",
       ],
       links: [
         {
-          label: "GitHub (Go Version)",
-          href: "https://github.com/lihaozhe013/streamfile-server-go",
+          label: "Github",
+          href: "https://github.com/lihaozhe013/streamfile-server-nodejs",
           type: "github",
         },
         {
-          label: "Github (Node.js Version)",
-          href: "https://github.com/lihaozhe013/streamfile-server-nodejs",
+          label: "GitHub (Old Go Version)",
+          href: "https://github.com/lihaozhe013/streamfile-server-go",
           type: "github",
         },
         {
