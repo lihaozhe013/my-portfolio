@@ -4,27 +4,30 @@
   "description": "Portfolio page - React app",
   "type": "module",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.7",
-    "@mui/material": "^7.3.7",
+    "@mui/icons-material": "^7.3.9",
+    "@mui/material": "^7.3.9",
+    "prettier": "^3.8.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "@types/node": "^25.2.3",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.4",
-    "tailwindcss": "^4.1.16",
+    "@vitejs/plugin-react": "^6.0.1",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1"
+    "vite": "^8.0.5"
   }
 }
