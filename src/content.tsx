@@ -32,6 +32,7 @@ class Content_Class {
 
   skills: string[] = [
     "TypeScript",
+    "Python",
     "Node.js",
     "React.js",
     "C",
@@ -46,9 +47,6 @@ class Content_Class {
     "Debian",
     "Bash",
     "Nginx",
-    "SQLite",
-    "Python",
-    "Django",
     "PyTorch",
     "Ant Design",
     "Tailwind CSS",
@@ -57,6 +55,56 @@ class Content_Class {
   ];
 
   projects: Project[] = [
+    {
+      title: "License Plate Recognition Systems - Course Project",
+      description:
+        "A LPR system for Ontario style license plate, trained on PyTorch. The architecture consists of a CNN bounding box layer and a CRNN for character recognition layer. Detailed structures and implementations are included in the report.",
+      technologies: [
+        "PyTorch",
+        "Python",
+        "jinja2",
+        "playwright",
+        "albumentations"
+      ],
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/lihaozhe013/APS360-Project-License-Plate-Recognition",
+          type: "github",
+        },
+        {
+          label: "Report",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/portfolio/APS360_Project_Final_Report.pdf",
+          type: "external",
+        },
+      ],
+    },
+    {
+      title: "Dinosaur Game - Course Project",
+      description:
+        "An embedded systems project featuring a dinosaur game implemented on STM32 MCU with custom graphics and input handling.",
+      technologies: [
+        "C",
+        "Embedded Systems",
+        "STM32",
+        "SSD1306 OLED Display",
+        "DMA",
+        "GPIO",
+        "I2C",
+      ],
+      links: [
+        {
+          label: "Video",
+          href: "https://youtu.be/_ZocQdUdjPw?si=gIY0hTswSoknH1XM",
+          type: "external",
+        },
+        {
+          label: "Report",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE342FinalReport.pdf",
+          type: "external",
+        },
+      ],
+    },
     {
       title: "TradeFlow System",
       description:
@@ -103,38 +151,6 @@ class Content_Class {
         {
           label: "Demo & Screenshots",
           href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
-          type: "external",
-        },
-      ],
-    },
-    {
-      title: "StreamFile Server",
-      description:
-        "A lightweight, database-free static resource hosting server with markdown rendering, video/audio playback, webpage hosting, private link generation, file upload, and file search features.",
-      technologies: [
-        "TypeScript",
-        "Node.js",
-        "React",
-        "Vite",
-        "Express",
-        "Video.js",
-        "Tailwind CSS",
-        "Docker",
-      ],
-      links: [
-        {
-          label: "Github",
-          href: "https://github.com/lihaozhe013/streamfile-server-nodejs",
-          type: "github",
-        },
-        {
-          label: "GitHub (Old Go Version)",
-          href: "https://github.com/lihaozhe013/streamfile-server-go",
-          type: "github",
-        },
-        {
-          label: "Screenshots",
-          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/streamfile-server/",
           type: "external",
         },
       ],
@@ -205,6 +221,38 @@ class Content_Class {
         {
           label: "Presentation Slides",
           href: "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ece241-final-presentation.pdf",
+          type: "external",
+        },
+      ],
+    },
+    {
+      title: "StreamFile Server",
+      description:
+        "A lightweight, database-free static resource hosting server with markdown rendering, video/audio playback, webpage hosting, private link generation, file upload, and file search features.",
+      technologies: [
+        "TypeScript",
+        "Node.js",
+        "React",
+        "Vite",
+        "Express",
+        "Video.js",
+        "Tailwind CSS",
+        "Docker",
+      ],
+      links: [
+        {
+          label: "Github",
+          href: "https://github.com/lihaozhe013/streamfile-server-nodejs",
+          type: "github",
+        },
+        {
+          label: "GitHub (Old Go Version)",
+          href: "https://github.com/lihaozhe013/streamfile-server-go",
+          type: "github",
+        },
+        {
+          label: "Screenshots",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/streamfile-server/",
           type: "external",
         },
       ],
