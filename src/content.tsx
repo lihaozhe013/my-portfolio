@@ -246,11 +246,6 @@ class Content_Class {
           type: "github",
         },
         {
-          label: "GitHub (Old Go Version)",
-          href: "https://github.com/lihaozhe013/streamfile-server-go",
-          type: "github",
-        },
-        {
           label: "Screenshots",
           href: "https://lihaozhe013.github.io/lihaozhe-website/posts/streamfile-server/",
           type: "external",
