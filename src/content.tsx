@@ -124,9 +124,9 @@ class Content_Class {
       ],
       links: [
         {
-          label: "GitHub",
-          href: "https://github.com/lihaozhe013/tradeflow-core",
-          type: "github",
+          label: "Detail",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
+          type: "external",
         },
       ],
     },
@@ -149,7 +149,7 @@ class Content_Class {
       ],
       links: [
         {
-          label: "Demo & Screenshots",
+          label: "Detail",
           href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
           type: "external",
         },
