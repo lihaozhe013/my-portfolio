@@ -128,6 +128,11 @@ class Content_Class {
           href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
           type: "external",
         },
+        {
+          label: "GitHub",
+          href: "https://github.com/lihaozhe013/tradeflow-oss",
+          type: "github",
+        },
       ],
     },
     {
