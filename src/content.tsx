@@ -80,32 +80,6 @@ class Content_Class {
       ],
     },
     {
-      title: "Dinosaur Game - Course Project",
-      description:
-        "An embedded systems project featuring a dinosaur game implemented on STM32 MCU with custom graphics and input handling.",
-      technologies: [
-        "C",
-        "Embedded Systems",
-        "STM32",
-        "SSD1306 OLED Display",
-        "DMA",
-        "GPIO",
-        "I2C",
-      ],
-      links: [
-        {
-          label: "Video",
-          href: "https://youtu.be/_ZocQdUdjPw?si=gIY0hTswSoknH1XM",
-          type: "external",
-        },
-        {
-          label: "Report",
-          href: "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE342FinalReport.pdf",
-          type: "external",
-        },
-      ],
-    },
-    {
       title: "TradeFlow System",
       description:
         "A full-stack trade management web app built for a small business, developed and deployed by me from design to production.",
@@ -156,6 +130,32 @@ class Content_Class {
         {
           label: "Detail",
           href: "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
+          type: "external",
+        },
+      ],
+    },
+    {
+      title: "Dinosaur Game - Course Project",
+      description:
+        "An embedded systems project featuring a dinosaur game implemented on STM32 MCU with custom graphics and input handling.",
+      technologies: [
+        "C",
+        "Embedded Systems",
+        "STM32",
+        "SSD1306 OLED Display",
+        "DMA",
+        "GPIO",
+        "I2C",
+      ],
+      links: [
+        {
+          label: "Video",
+          href: "https://youtu.be/_ZocQdUdjPw?si=gIY0hTswSoknH1XM",
+          type: "external",
+        },
+        {
+          label: "Report",
+          href: "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE342FinalReport.pdf",
           type: "external",
         },
       ],
