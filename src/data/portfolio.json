@@ -49,91 +49,25 @@
   },
   "projects": [
     {
-      "category": "embedded",
-      "featured": false,
-      "id": "dinosaur-game",
-      "index": "06",
-      "links": [
-        {
-          "href": "https://youtu.be/_ZocQdUdjPw?si=gIY0hTswSoknH1XM",
-          "label": "Video",
-          "type": "external"
-        },
-        {
-          "href": "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE342FinalReport.pdf",
-          "label": "Report",
-          "type": "external"
-        }
-      ],
-      "technologies": [
-        "C",
-        "Embedded Systems",
-        "STM32",
-        "SSD1306 OLED Display",
-        "DMA",
-        "GPIO",
-        "I2C"
-      ]
-    },
-    {
-      "category": "algorithms",
+      "category": "game",
       "featured": true,
-      "id": "gis-route-optimization",
-      "index": "08",
+      "id": "battle-royal-moba",
+      "index": "01",
       "links": [
         {
-          "href": "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE297-OP2.pdf",
-          "label": "Presentation",
-          "type": "external"
-        },
-        {
-          "href": "https://lihaozhe013.github.io/lihaozhe-website/posts/gis-route-optimization-application/",
-          "label": "Detail",
-          "type": "external"
-        }
-      ],
-      "markdown": "gis-route-optimization.md",
-      "technologies": [
-        "C++",
-        "GTK",
-        "TomTom API",
-        "Algorithms",
-        "Dijkstra",
-        "A*",
-        "Greedy Algorithm",
-        "Git"
-      ]
-    },
-    {
-      "category": "embedded",
-      "featured": false,
-      "id": "runner-game",
-      "index": "10",
-      "links": [
-        {
-          "href": "https://github.com/lihaozhe013/ece243_runner_game",
+          "href": "https://github.com/lihaozhe013/battle-royale-moba-godot",
           "label": "GitHub",
           "type": "github"
-        },
-        {
-          "href": "https://lihaozhe013.github.io/lihaozhe-website/posts/runner-game-ece243-project/",
-          "label": "Detail",
-          "type": "external"
         }
       ],
-      "technologies": [
-        "C",
-        "RISC-V Assembly",
-        "Embedded Systems",
-        "CPULator",
-        "Git"
-      ]
+      "markdown": "battle-royal-moba.md",
+      "technologies": ["Godot", "C++", "GDScript"]
     },
     {
       "category": "software",
       "featured": true,
       "id": "tradeflow-system",
-      "index": "03",
+      "index": "02",
       "links": [
         {
           "href": "https://lihaozhe013.github.io/lihaozhe-website/posts/tradeflow-system/",
@@ -168,6 +102,35 @@
       ]
     },
     {
+      "category": "algorithms",
+      "featured": true,
+      "id": "gis-route-optimization",
+      "index": "03",
+      "links": [
+        {
+          "href": "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE297-OP2.pdf",
+          "label": "Presentation",
+          "type": "external"
+        },
+        {
+          "href": "https://lihaozhe013.github.io/lihaozhe-website/posts/gis-route-optimization-application/",
+          "label": "Detail",
+          "type": "external"
+        }
+      ],
+      "markdown": "gis-route-optimization.md",
+      "technologies": [
+        "C++",
+        "GTK",
+        "TomTom API",
+        "Algorithms",
+        "Dijkstra",
+        "A*",
+        "Greedy Algorithm",
+        "Git"
+      ]
+    },
+    {
       "category": "deep-learning",
       "featured": false,
       "id": "license-plate-recognition",
@@ -193,19 +156,56 @@
       ]
     },
     {
-      "category": "game",
-      "featured": true,
-      "id": "battle-royal-moba",
-      "index": "01",
+      "category": "embedded",
+      "featured": false,
+      "id": "dinosaur-game",
+      "index": "06",
       "links": [
         {
-          "href": "https://github.com/lihaozhe013/battle-royale-moba-godot",
-          "label": "GitHub",
-          "type": "github"
+          "href": "https://youtu.be/_ZocQdUdjPw?si=gIY0hTswSoknH1XM",
+          "label": "Video",
+          "type": "external"
+        },
+        {
+          "href": "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE342FinalReport.pdf",
+          "label": "Report",
+          "type": "external"
         }
       ],
-      "markdown": "battle-royal-moba.md",
-      "technologies": ["Godot", "C++", "GDScript"]
+      "technologies": [
+        "C",
+        "Embedded Systems",
+        "STM32",
+        "SSD1306 OLED Display",
+        "DMA",
+        "GPIO",
+        "I2C"
+      ]
+    },
+    {
+      "category": "embedded",
+      "featured": false,
+      "id": "runner-game",
+      "index": "10",
+      "links": [
+        {
+          "href": "https://github.com/lihaozhe013/ece243_runner_game",
+          "label": "GitHub",
+          "type": "github"
+        },
+        {
+          "href": "https://lihaozhe013.github.io/lihaozhe-website/posts/runner-game-ece243-project/",
+          "label": "Detail",
+          "type": "external"
+        }
+      ],
+      "technologies": [
+        "C",
+        "RISC-V Assembly",
+        "Embedded Systems",
+        "CPULator",
+        "Git"
+      ]
     }
   ],
   "skills": [

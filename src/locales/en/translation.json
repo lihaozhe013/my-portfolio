@@ -66,7 +66,7 @@
   },
   "projects": {
     "battle-royal-moba": {
-      "description": "A Battle Royal Moba Game",
+      "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. ",
       "title": "Battle Royal Moba Game"
     },
     "dinosaur-game": {
