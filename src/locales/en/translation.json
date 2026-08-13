@@ -22,10 +22,10 @@
       "computer-graphics": "Computer Graphics",
       "computer-hardware": "Computer Hardware",
       "computer-organization": "Computer Organization",
+      "deep-learning": "Applied Fundamentals of Deep Learning",
       "digital-systems": "Digital Systems",
       "introduction-to-databases": "Introduction to Databases",
-      "operating-systems": "Operating Systems",
-      "software-design-and-communication": "Software Design & Communication"
+      "operating-systems": "Operating Systems"
     },
     "degree": "B.A.Sc. in Computer Engineering",
     "institution": "University of Toronto"
@@ -34,7 +34,7 @@
     "availability": "",
     "eyebrow": "Electrical & Computer Engineering · University of Toronto",
     "headline": "Creative · Empathetic",
-    "introduction": "4th year ECE student at the University of Toronto",
+    "introduction": "4th year ECE student @ University of Toronto",
     "portraitCaption": ""
   },
   "labels": {
@@ -56,8 +56,8 @@
       "title": "About Me"
     },
     "contact": {
-      "introduction": "The best place to find me is email.",
-      "title": "Let's make something careful."
+      "introduction": "",
+      "title": "Let's create something that goes beyond the wildest imagination."
     },
     "timeline": {
       "introduction": "A working timeline of video games, software, and embedded system projects.",
@@ -66,7 +66,7 @@
   },
   "projects": {
     "battle-royal-moba": {
-      "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. ",
+      "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. The project explores how a MOBA-style command model, hero combat, bot behavior pathfinding.",
       "title": "Battle Royal Moba Game"
     },
     "dinosaur-game": {
@@ -94,7 +94,7 @@
       "title": "StreamFile Server"
     },
     "tradeflow-system": {
-      "description": "A full-stack trade management web app built for a small business, developed and deployed from design through production. ",
+      "description": "Tradeflow System is a lightweight trade and inventory management system for small businesses. It brings purchasing, sales, inventory, partner settlements, analysis, and operational governance into one workspace.",
       "title": "TradeFlow System"
     }
   },
