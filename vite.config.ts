@@ -15,6 +15,8 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'dist',
+    // Keep the warning threshold above the current main bundle size.
+    chunkSizeWarningLimit: 1200,
     // 生成的文件名不包含hash，便于Hugo引用
     rollupOptions: {
       output: {
