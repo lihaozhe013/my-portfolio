@@ -1,7 +1,13 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { useEffect, useState, type ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import type { ProjectMeta } from '@/types/content';
+
+interface FullProjectPreview {
+  readingMinutes: number;
+  highlights: string[];
+}
 
 interface ProjectDialogProps {
   project: ProjectMeta;
@@ -14,6 +20,7 @@ interface ProjectDialogProps {
   actionLabel?: string;
   detailHref?: string;
   detailLabel?: string;
+  fullProjectPreview?: FullProjectPreview;
 }
 
 export default function ProjectDialog({
@@ -27,7 +34,9 @@ export default function ProjectDialog({
   actionLabel,
   detailHref,
   detailLabel,
+  fullProjectPreview,
 }: ProjectDialogProps) {
+  const { t } = useTranslation();
   const [container, setContainer] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -56,6 +65,31 @@ export default function ProjectDialog({
           <Dialog.Description className="body-copy dialog-description">
             {description}
           </Dialog.Description>
+          {detailHref && detailLabel && fullProjectPreview ? (
+            <Dialog.Close asChild>
+              <Link className="dialog-full-project" to={detailHref}>
+                <div className="dialog-full-project-heading">
+                  <p className="section-kicker">{t('labels.fullProject')}</p>
+                  <span className="dialog-full-project-time">
+                    {t('labels.readingTime', {
+                      count: fullProjectPreview.readingMinutes,
+                    })}
+                  </span>
+                </div>
+                <p className="dialog-full-project-lede">
+                  {t('labels.fullProjectContents')}
+                </p>
+                <ul className="dialog-full-project-highlights">
+                  {fullProjectPreview.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+                <span className="dialog-full-project-action">
+                  {detailLabel} <span aria-hidden="true">→</span>
+                </span>
+              </Link>
+            </Dialog.Close>
+          ) : null}
           <div className="dialog-section">
             <p className="section-kicker">{technologiesLabel}</p>
             <ul className="technology-list" aria-label={technologiesLabel}>
@@ -64,28 +98,24 @@ export default function ProjectDialog({
               ))}
             </ul>
           </div>
-          {detailHref && detailLabel ? (
+          {project.links.length > 0 ? (
             <div className="dialog-links">
-              <Dialog.Close asChild>
-                <Link className="ink-link" to={detailHref}>
-                  {detailLabel} <span aria-hidden="true">↗</span>
-                </Link>
-              </Dialog.Close>
+              <p className="section-kicker">{t('labels.projectLinks')}</p>
+              <div className="dialog-external-links">
+                {project.links.map((link) => (
+                  <a
+                    className="ink-link"
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.label} <span aria-hidden="true">↗</span>
+                  </a>
+                ))}
+              </div>
             </div>
           ) : null}
-          <div className="dialog-links">
-            {project.links.map((link) => (
-              <a
-                className="ink-link"
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.label} <span aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </div>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

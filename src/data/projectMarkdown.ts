@@ -27,3 +27,24 @@ export function hasProjectMarkdown(filename: string): boolean {
 export function getProjectMarkdown(filename: string): string | undefined {
   return markdownByFilename.get(filename);
 }
+
+export interface ProjectMarkdownPreview {
+  readingMinutes: number;
+}
+
+export function getProjectMarkdownPreview(
+  filename: string,
+): ProjectMarkdownPreview | undefined {
+  const markdown = getProjectMarkdown(filename);
+
+  if (!markdown) {
+    return undefined;
+  }
+
+  const readableContent = markdown.replace(/```[\s\S]*?```/g, ' ');
+  const wordCount = readableContent.split(/\s+/).filter(Boolean).length;
+
+  return {
+    readingMinutes: Math.max(1, Math.ceil(wordCount / 220)),
+  };
+}

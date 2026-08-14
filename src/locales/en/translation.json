@@ -7,7 +7,9 @@
     "copyFailed": "Copy failed",
     "email": "Write an email",
     "openLink": "Open link",
-    "readDetails": "Read detailed case study",
+    "previewProject": "Preview project",
+    "exploreFullProject": "Explore the full project",
+    "readDetails": "Explore the full project",
     "readProject": "Read project",
     "selectedWorks": "View selected works"
   },
@@ -41,9 +43,13 @@
     "portraitCaption": ""
   },
   "labels": {
+    "fullProject": "Full project",
+    "fullProjectContents": "What’s inside",
     "coursework": "Relevant coursework",
     "featured": "Featured",
     "language": "Language",
+    "projectLinks": "Project links",
+    "readingTime": "{{count}} min read",
     "technologies": "Built with"
   },
   "nav": {
@@ -69,6 +75,11 @@
   },
   "projects": {
     "battle-royal-moba": {
+      "fullProjectHighlights": [
+        "Authoritative simulation architecture",
+        "Shared player and bot command pipeline",
+        "C++ and Godot data flow"
+      ],
       "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. The project explores how a MOBA-style command model, hero combat, bot behavior pathfinding.",
       "title": "Battle Royal Moba Game"
     },
@@ -77,6 +88,11 @@
       "title": "Dinosaur Game"
     },
     "gis-route-optimization": {
+      "fullProjectHighlights": [
+        "Dijkstra and A* route planning",
+        "Multi-stop optimization strategy",
+        "Traffic-aware map experience"
+      ],
       "description": "A geographic information system built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
       "title": "GIS Route Optimization Application"
     },
@@ -97,6 +113,11 @@
       "title": "StreamFile Server"
     },
     "tradeflow-system": {
+      "fullProjectHighlights": [
+        "Transaction and inventory source of truth",
+        "Financial and analytical data flow",
+        "Frontend, API, and database architecture"
+      ],
       "description": "Tradeflow System is a lightweight trade and inventory management system for small businesses. It brings purchasing, sales, inventory, partner settlements, analysis, and operational governance into one workspace.",
       "title": "TradeFlow System"
     }
