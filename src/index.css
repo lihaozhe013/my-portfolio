@@ -470,6 +470,121 @@ html[data-locale='zh'] .project-detail-page {
   color: var(--accent-cinnabar);
 }
 
+.mermaid-frame {
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+  border: 1px solid var(--border-line);
+  background: rgba(250, 248, 245, 0.72);
+  isolation: isolate;
+}
+
+.mermaid-controls {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--border-line);
+  background: rgba(250, 248, 245, 0.94);
+}
+
+.mermaid-control-button {
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1;
+  transition:
+    border-color 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.mermaid-control-button:hover,
+.mermaid-control-button:focus-visible {
+  border-color: var(--accent-cinnabar);
+  background: var(--accent-cinnabar-wash);
+  color: var(--accent-cinnabar);
+}
+
+.mermaid-control-reset {
+  font-size: 1.15rem;
+}
+
+.mermaid-viewport {
+  width: 100%;
+  min-height: clamp(18rem, 40vw, 30rem);
+  max-height: 42rem;
+  overflow: hidden;
+}
+
+.mermaid-content {
+  display: flex;
+  min-width: 100%;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 3.8rem 1.5rem 1.5rem;
+  cursor: grab;
+}
+
+.mermaid-content:active {
+  cursor: grabbing;
+}
+
+.mermaid-content > div {
+  display: flex;
+  width: 100%;
+  min-width: max-content;
+  justify-content: center;
+}
+
+.mermaid-content svg {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  overflow: visible;
+}
+
+.mermaid-status {
+  display: grid;
+  min-height: clamp(18rem, 40vw, 30rem);
+  margin: 0;
+  padding: 3.8rem 1.5rem 1.5rem;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.mermaid-status-error {
+  display: block;
+  min-height: 0;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--accent-cinnabar-line);
+  background: var(--accent-cinnabar-wash);
+  color: var(--accent-cinnabar);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.mermaid-frame .markdown-code-frame {
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+
 .markdown-content table {
   width: 100%;
   max-width: 100%;
@@ -1071,6 +1186,15 @@ html[data-locale='zh'] .project-detail-page {
   .site-footer {
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  .mermaid-viewport {
+    min-height: 16rem;
+  }
+
+  .mermaid-content {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 

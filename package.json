@@ -16,12 +16,14 @@
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.23",
     "i18next": "^26.3.6",
+    "mermaid": "^11.16.1",
     "prettier": "^3.9.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-i18next": "^17.0.11",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.18.2",
+    "react-zoom-pan-pinch": "^4.0.4",
     "remark-gfm": "^4.0.1",
     "three": "^0.185.1"
   },

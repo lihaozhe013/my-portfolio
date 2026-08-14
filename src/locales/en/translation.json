@@ -8,10 +8,13 @@
     "email": "Write an email",
     "openLink": "Open link",
     "previewProject": "Preview project",
+    "resetDiagram": "Reset diagram",
     "exploreFullProject": "Explore the full project",
     "readDetails": "Explore the full project",
     "readProject": "Read project",
-    "selectedWorks": "View selected works"
+    "selectedWorks": "View selected works",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out"
   },
   "contact": {
     "email": "Email",
@@ -50,7 +53,10 @@
     "language": "Language",
     "projectLinks": "Project links",
     "readingTime": "{{count}} min read",
-    "technologies": "Built with"
+    "technologies": "Built with",
+    "mermaidDiagram": "Mermaid diagram",
+    "mermaidRenderError": "This diagram could not be rendered. The Mermaid source is shown below.",
+    "renderingDiagram": "Rendering diagram…"
   },
   "nav": {
     "about": "About",

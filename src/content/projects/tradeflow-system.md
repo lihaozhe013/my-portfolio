@@ -79,6 +79,8 @@ role, while the backend remains the final enforcement point.
 
 ```mermaid
 flowchart LR
+  accTitle: Tradeflow System high-level architecture
+  accDescr: The React frontend communicates with the Express API, which connects domain services to authentication, Prisma data access, PostgreSQL, configuration caches, and export services.
   UI[React SPA] -->|HTTP and JSON| API[Express API]
   API --> AUTH[Authentication and authorization]
   API --> DOMAIN[Domain routes and services]

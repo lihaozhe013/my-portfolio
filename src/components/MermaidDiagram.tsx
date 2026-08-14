@@ -1,0 +1,202 @@
+import { useEffect, useId, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
+import type { Mermaid } from 'mermaid';
+import MarkdownCodeBlock from '@/components/MarkdownCodeBlock';
+
+interface MermaidDiagramProps {
+  source: string;
+}
+
+type RenderState = 'loading' | 'ready' | 'error';
+
+let mermaidModulePromise: Promise<typeof import('mermaid')> | null = null;
+let mermaidInitializationPromise: Promise<Mermaid> | null = null;
+
+function getMermaidModule() {
+  mermaidModulePromise ??= import('mermaid');
+  return mermaidModulePromise;
+}
+
+async function getConfiguredMermaid(): Promise<Mermaid> {
+  const { default: mermaid } = await getMermaidModule();
+
+  mermaidInitializationPromise ??= Promise.resolve().then(() => {
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: 'strict',
+      suppressErrorRendering: true,
+      htmlLabels: false,
+      fontFamily: '"Source Serif 4", "Source Han Serif SC", Georgia, serif',
+      fontSize: 14,
+      theme: 'base',
+      secure: [
+        'secure',
+        'securityLevel',
+        'startOnLoad',
+        'maxTextSize',
+        'suppressErrorRendering',
+        'maxEdges',
+        'theme',
+        'themeVariables',
+        'fontFamily',
+        'fontSize',
+        'htmlLabels',
+      ],
+      themeVariables: {
+        background: '#faf8f5',
+        primaryColor: '#f1ece5',
+        primaryTextColor: '#1f1d1a',
+        primaryBorderColor: '#746e66',
+        lineColor: '#8c2c23',
+        secondaryColor: '#f5e9e6',
+        secondaryTextColor: '#1f1d1a',
+        secondaryBorderColor: '#8c2c23',
+        tertiaryColor: '#faf8f5',
+        tertiaryTextColor: '#746e66',
+        tertiaryBorderColor: '#ded8d0',
+        textColor: '#1f1d1a',
+        mainBkg: '#f1ece5',
+        nodeTextColor: '#1f1d1a',
+        nodeBorder: '#746e66',
+        clusterBkg: '#faf8f5',
+        clusterBorder: '#ded8d0',
+        defaultLinkColor: '#8c2c23',
+        edgeLabelBackground: '#faf8f5',
+        noteBkgColor: '#f5e9e6',
+        noteTextColor: '#1f1d1a',
+        noteBorderColor: '#8c2c23',
+        titleColor: '#1f1d1a',
+        actorBkg: '#f1ece5',
+        actorBorder: '#746e66',
+        actorTextColor: '#1f1d1a',
+        signalColor: '#8c2c23',
+        signalTextColor: '#1f1d1a',
+      },
+    });
+
+    return mermaid;
+  });
+
+  return mermaidInitializationPromise;
+}
+
+export default function MermaidDiagram({ source }: MermaidDiagramProps) {
+  const { t } = useTranslation();
+  const id = useId().replace(/:/g, '');
+  const [svg, setSvg] = useState('');
+  const [renderState, setRenderState] = useState<RenderState>('loading');
+
+  useEffect(() => {
+    let isCurrentRender = true;
+
+    setSvg('');
+    setRenderState('loading');
+
+    const renderDiagram = async () => {
+      try {
+        if (document.fonts?.ready) {
+          await document.fonts.ready;
+        }
+
+        const mermaid = await getConfiguredMermaid();
+        const renderId = `mermaid-${id}-${Date.now()}`;
+        const result = await mermaid.render(renderId, source);
+
+        if (!isCurrentRender) {
+          return;
+        }
+
+        setSvg(result.svg);
+        setRenderState('ready');
+      } catch {
+        if (isCurrentRender) {
+          setRenderState('error');
+        }
+      }
+    };
+
+    void renderDiagram();
+
+    return () => {
+      isCurrentRender = false;
+    };
+  }, [id, source]);
+
+  const diagramLabel = t('labels.mermaidDiagram');
+  const zoomInLabel = t('actions.zoomIn');
+  const zoomOutLabel = t('actions.zoomOut');
+  const resetLabel = t('actions.resetDiagram');
+
+  return (
+    <figure className="mermaid-frame" aria-label={diagramLabel}>
+      {renderState === 'ready' ? (
+        <TransformWrapper
+          initialScale={1}
+          minScale={1}
+          maxScale={3}
+          centerOnInit
+          limitToBounds
+          wheel={{ disabled: true }}
+          doubleClick={{ disabled: true }}
+          panning={{ velocityDisabled: true }}
+        >
+          {({ zoomIn, zoomOut, resetTransform }) => (
+            <>
+              <div
+                className="mermaid-controls"
+                role="toolbar"
+                aria-label={diagramLabel}
+              >
+                <button
+                  className="mermaid-control-button"
+                  type="button"
+                  onClick={() => zoomOut()}
+                  aria-label={zoomOutLabel}
+                  title={zoomOutLabel}
+                >
+                  −
+                </button>
+                <button
+                  className="mermaid-control-button"
+                  type="button"
+                  onClick={() => zoomIn()}
+                  aria-label={zoomInLabel}
+                  title={zoomInLabel}
+                >
+                  +
+                </button>
+                <button
+                  className="mermaid-control-button mermaid-control-reset"
+                  type="button"
+                  onClick={() => resetTransform()}
+                  aria-label={resetLabel}
+                  title={resetLabel}
+                >
+                  ↺
+                </button>
+              </div>
+              <TransformComponent
+                wrapperClass="mermaid-viewport"
+                contentClass="mermaid-content"
+              >
+                <div dangerouslySetInnerHTML={{ __html: svg }} />
+              </TransformComponent>
+            </>
+          )}
+        </TransformWrapper>
+      ) : renderState === 'error' ? (
+        <>
+          <p className="mermaid-status mermaid-status-error" role="alert">
+            {t('labels.mermaidRenderError')}
+          </p>
+          <MarkdownCodeBlock>{source}</MarkdownCodeBlock>
+        </>
+      ) : (
+        <p className="mermaid-status" role="status" aria-live="polite">
+          {t('labels.renderingDiagram')}
+        </p>
+      )}
+    </figure>
+  );
+}

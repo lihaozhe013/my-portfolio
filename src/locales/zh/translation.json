@@ -8,10 +8,13 @@
     "email": "Write an email",
     "openLink": "Open link",
     "previewProject": "查看项目简介",
+    "resetDiagram": "重置图表",
     "exploreFullProject": "查看完整项目",
     "readDetails": "查看完整项目",
     "readProject": "Read project",
-    "selectedWorks": "View selected works"
+    "selectedWorks": "View selected works",
+    "zoomIn": "放大图表",
+    "zoomOut": "缩小图表"
   },
   "contact": {
     "email": "Email",
@@ -50,7 +53,10 @@
     "language": "Language",
     "projectLinks": "项目链接",
     "readingTime": "约 {{count}} 分钟阅读",
-    "technologies": "Built with"
+    "technologies": "Built with",
+    "mermaidDiagram": "Mermaid 图表",
+    "mermaidRenderError": "图表渲染失败，下面显示 Mermaid 源码。",
+    "renderingDiagram": "正在渲染图表……"
   },
   "nav": {
     "about": "About",
