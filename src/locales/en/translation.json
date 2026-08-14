@@ -2,6 +2,9 @@
   "actions": {
     "backToProjects": "Back to projects",
     "close": "Close",
+    "codeCopied": "Copied",
+    "copyCode": "Copy code",
+    "copyFailed": "Copy failed",
     "email": "Write an email",
     "openLink": "Open link",
     "readDetails": "Read detailed case study",

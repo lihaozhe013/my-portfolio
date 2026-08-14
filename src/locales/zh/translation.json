@@ -2,6 +2,9 @@
   "actions": {
     "backToProjects": "Back to projects",
     "close": "Close",
+    "codeCopied": "已复制",
+    "copyCode": "复制代码",
+    "copyFailed": "复制失败",
     "email": "Write an email",
     "openLink": "Open link",
     "readDetails": "Read detailed case study",

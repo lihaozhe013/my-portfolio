@@ -302,15 +302,25 @@ html[data-locale='zh'] .body-copy {
 }
 
 .project-detail-page {
+  --project-reading-width: var(--measure-en);
+
   padding-top: clamp(3rem, 8vw, 6rem);
+}
+
+html[data-locale='zh'] .project-detail-page {
+  --project-reading-width: var(--measure-zh);
+}
+
+.project-detail-navigation,
+.project-detail-header,
+.markdown-content {
+  width: 100%;
+  max-width: var(--project-reading-width);
+  margin-inline: auto;
 }
 
 .project-detail-navigation {
   margin-bottom: clamp(4rem, 10vw, 8rem);
-}
-
-.project-detail-header {
-  max-width: 62rem;
 }
 
 .project-detail-header .page-lede {
@@ -335,14 +345,9 @@ html[data-locale='zh'] .body-copy {
 }
 
 .markdown-content {
-  max-width: 70ch;
   margin-top: clamp(5rem, 12vw, 9rem);
   font-size: 0.9rem;
   line-height: 1.75;
-}
-
-html[data-locale='zh'] .markdown-content {
-  max-width: 40em;
 }
 
 .markdown-content h2,
@@ -368,15 +373,21 @@ html[data-locale='zh'] .markdown-content {
 .markdown-content p,
 .markdown-content ul,
 .markdown-content ol,
-.markdown-content blockquote,
-.markdown-content pre,
-.markdown-content table {
+.markdown-content blockquote {
   margin: 1.25rem 0;
 }
 
 .markdown-content ul,
 .markdown-content ol {
   padding-left: 1.4rem;
+}
+
+.markdown-content ul {
+  list-style: disc;
+}
+
+.markdown-content ol {
+  list-style: decimal;
 }
 
 .markdown-content li + li {
@@ -405,29 +416,76 @@ html[data-locale='zh'] .markdown-content {
 }
 
 .markdown-content pre {
-  overflow-x: auto;
-  padding: 1.1rem 1.2rem;
+  margin: 0;
+  padding: 2.8rem 1.1rem 1.1rem;
+  overflow: visible;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.markdown-content pre code {
+  display: block;
+  padding: 0;
+  background: transparent;
+  white-space: inherit;
+  overflow-wrap: inherit;
+}
+
+.markdown-code-frame {
+  position: relative;
+  margin: 1.25rem 0;
   border: 1px solid var(--border-line);
   background: var(--paper-deep);
 }
 
-.markdown-content pre code {
-  padding: 0;
+.markdown-code-copy {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.65rem;
+  z-index: 1;
+  padding: 0.25rem 0.45rem;
+  border: 1px solid var(--border-line);
   background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.66rem;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  transition:
+    border-color 0.4s ease,
+    color 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.markdown-code-copy:hover,
+.markdown-code-copy:focus-visible {
+  border-color: var(--accent-cinnabar);
+  background: var(--bg-paper);
+  color: var(--accent-cinnabar);
 }
 
 .markdown-content table {
-  display: block;
-  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.25rem 0;
   border-collapse: collapse;
-  white-space: nowrap;
+  table-layout: auto;
+  font-size: 0.86rem;
+  line-height: 1.55;
 }
 
 .markdown-content th,
 .markdown-content td {
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--border-line);
+  overflow-wrap: anywhere;
   text-align: left;
+  vertical-align: top;
+  white-space: normal;
+  hyphens: auto;
 }
 
 .markdown-content th {
