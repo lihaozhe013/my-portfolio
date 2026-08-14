@@ -15,10 +15,10 @@
   --text-ink: #1f1d1a;
   --text-muted: #746e66;
   --border-line: #ded8d0;
-  --accent-cinnabar: #8c2c23;
-  --accent-cinnabar-wash: rgba(140, 44, 35, 0.08);
-  --accent-cinnabar-wash-hover: rgba(140, 44, 35, 0.13);
-  --accent-cinnabar-line: rgba(140, 44, 35, 0.36);
+  --accent-ink: #315c62;
+  --accent-ink-wash: rgba(49, 92, 98, 0.08);
+  --accent-ink-wash-hover: rgba(49, 92, 98, 0.13);
+  --accent-ink-line: rgba(49, 92, 98, 0.36);
   --font-serif-en: 'Source Serif 4', Georgia, serif;
   --font-serif-zh: 'Source Han Serif SC', 'Source Serif 4', serif;
   --font-body: var(--font-serif-en);
@@ -58,8 +58,8 @@ body {
 }
 
 ::selection {
-  background: rgba(140, 44, 35, 0.14);
-  color: var(--accent-cinnabar);
+  background: rgba(49, 92, 98, 0.14);
+  color: var(--accent-ink);
 }
 
 a {
@@ -73,7 +73,7 @@ a {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 1px solid var(--accent-cinnabar);
+  outline: 1px solid var(--accent-ink);
   outline-offset: 0.3rem;
 }
 
@@ -163,7 +163,7 @@ a:focus-visible {
 }
 
 .site-mark {
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
 }
 
 .site-nav {
@@ -191,7 +191,7 @@ a:focus-visible {
   bottom: 0;
   left: 0;
   height: 1px;
-  background: var(--accent-cinnabar);
+  background: var(--accent-ink);
   content: '';
   transform: scaleX(0);
   transform-origin: right;
@@ -201,7 +201,7 @@ a:focus-visible {
 .site-nav a:hover,
 .site-nav a.is-active,
 .language-switcher:hover {
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
 }
 
 .site-nav a:hover::after,
@@ -398,7 +398,7 @@ html[data-locale='zh'] .project-detail-page {
 }
 
 .markdown-content a {
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
 }
 
 .markdown-content strong {
@@ -407,7 +407,7 @@ html[data-locale='zh'] .project-detail-page {
 
 .markdown-content blockquote {
   padding-left: 1.25rem;
-  border-left: 1px solid var(--accent-cinnabar);
+  border-left: 1px solid var(--accent-ink);
   color: var(--text-muted);
 }
 
@@ -465,9 +465,9 @@ html[data-locale='zh'] .project-detail-page {
 
 .markdown-code-copy:hover,
 .markdown-code-copy:focus-visible {
-  border-color: var(--accent-cinnabar);
+  border-color: var(--accent-ink);
   background: var(--bg-paper);
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
 }
 
 .mermaid-frame {
@@ -512,9 +512,9 @@ html[data-locale='zh'] .project-detail-page {
 
 .mermaid-control-button:hover,
 .mermaid-control-button:focus-visible {
-  border-color: var(--accent-cinnabar);
-  background: var(--accent-cinnabar-wash);
-  color: var(--accent-cinnabar);
+  border-color: var(--accent-ink);
+  background: var(--accent-ink-wash);
+  color: var(--accent-ink);
 }
 
 .mermaid-control-reset {
@@ -576,9 +576,9 @@ html[data-locale='zh'] .project-detail-page {
   display: block;
   min-height: 0;
   padding: 0.8rem 1rem;
-  border-bottom: 1px solid var(--accent-cinnabar-line);
-  background: var(--accent-cinnabar-wash);
-  color: var(--accent-cinnabar);
+  border-bottom: 1px solid var(--accent-ink-line);
+  background: var(--accent-ink-wash);
+  color: var(--accent-ink);
   font-size: 0.78rem;
   line-height: 1.5;
 }
@@ -640,7 +640,7 @@ html[data-locale='zh'] .project-detail-page {
 }
 
 .ink-link {
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
   font-size: 0.9rem;
   letter-spacing: 0.035em;
   text-decoration: none;
@@ -763,7 +763,7 @@ html[data-locale='zh'] .project-detail-page {
   align-items: center;
   gap: 0.45rem;
   margin-left: auto;
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
   font-size: 0.68rem;
   letter-spacing: 0.07em;
   line-height: 1.4;
@@ -791,7 +791,7 @@ html[data-locale='zh'] .project-detail-page {
 }
 
 .project-full-project-mark {
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
   font-size: 0.62rem;
   letter-spacing: 0.07em;
   line-height: 1.4;
@@ -821,7 +821,7 @@ html[data-locale='zh'] .project-detail-page {
 .project-row:focus-visible {
   padding-right: 0.65rem;
   padding-left: 0.65rem;
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
 }
 
 .project-index {
@@ -885,7 +885,7 @@ html[data-locale='zh'] .project-detail-page {
 
 .education-institution {
   margin: 0.7rem 0 2.5rem;
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
 }
 
 .coursework-label {
@@ -993,9 +993,9 @@ html[data-locale='zh'] .project-detail-page {
   display: block;
   margin-top: 2rem;
   padding: 1.2rem 1.35rem;
-  border: 1px solid var(--accent-cinnabar-line);
-  background: var(--accent-cinnabar-wash);
-  box-shadow: inset 0.2rem 0 var(--accent-cinnabar);
+  border: 1px solid var(--accent-ink-line);
+  background: var(--accent-ink-wash);
+  box-shadow: inset 0.2rem 0 var(--accent-ink);
   color: var(--text-ink);
   text-decoration: none;
   transition:
@@ -1006,14 +1006,14 @@ html[data-locale='zh'] .project-detail-page {
 
 .dialog-full-project:hover,
 .dialog-full-project:focus-visible {
-  border-color: var(--accent-cinnabar);
-  background: var(--accent-cinnabar-wash-hover);
+  border-color: var(--accent-ink);
+  background: var(--accent-ink-wash-hover);
   transform: translateY(-0.15rem);
 }
 
 .dialog-full-project .section-kicker,
 .dialog-full-project-time {
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
 }
 
 .dialog-full-project-heading {
@@ -1044,12 +1044,12 @@ html[data-locale='zh'] .project-detail-page {
 
 .dialog-full-project-highlights li::before {
   margin-right: 0.55rem;
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
   content: '—';
 }
 
 .dialog-full-project-action {
-  color: var(--accent-cinnabar);
+  color: var(--accent-ink);
   font-size: 0.78rem;
   letter-spacing: 0.035em;
 }
@@ -1105,8 +1105,8 @@ html[data-locale='zh'] .project-detail-page {
 }
 
 .text-button:hover {
-  border-color: var(--accent-cinnabar);
-  color: var(--accent-cinnabar);
+  border-color: var(--accent-ink);
+  color: var(--accent-ink);
 }
 
 @media (max-width: 800px) {
