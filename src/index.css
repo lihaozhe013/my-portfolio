@@ -521,21 +521,25 @@ html[data-locale='zh'] .project-detail-page {
   font-size: 1.15rem;
 }
 
-.mermaid-viewport {
-  width: 100%;
+.mermaid-frame .mermaid-viewport {
+  width: 100% !important;
+  height: clamp(18rem, 40vw, 30rem) !important;
   min-height: clamp(18rem, 40vw, 30rem);
   max-height: 42rem;
   overflow: hidden;
+  touch-action: none;
 }
 
-.mermaid-content {
+.mermaid-frame .mermaid-content {
   display: flex;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
   align-items: center;
   justify-content: center;
   padding: 3.8rem 1.5rem 1.5rem;
   cursor: grab;
+  touch-action: none;
 }
 
 .mermaid-content:active {
@@ -1188,11 +1192,11 @@ html[data-locale='zh'] .project-detail-page {
     flex-wrap: wrap;
   }
 
-  .mermaid-viewport {
+  .mermaid-frame .mermaid-viewport {
     min-height: 16rem;
   }
 
-  .mermaid-content {
+  .mermaid-frame .mermaid-content {
     padding-right: 1rem;
     padding-left: 1rem;
   }

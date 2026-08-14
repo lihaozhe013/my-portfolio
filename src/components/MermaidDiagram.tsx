@@ -137,9 +137,9 @@ export default function MermaidDiagram({ source }: MermaidDiagramProps) {
           maxScale={3}
           centerOnInit
           limitToBounds
-          wheel={{ disabled: true }}
+          wheel={{ disabled: false }}
           doubleClick={{ disabled: true }}
-          panning={{ velocityDisabled: true }}
+          panning={{ velocityDisabled: true, allowLeftClickPan: true }}
         >
           {({ zoomIn, zoomOut, resetTransform }) => (
             <>
@@ -179,6 +179,15 @@ export default function MermaidDiagram({ source }: MermaidDiagramProps) {
               <TransformComponent
                 wrapperClass="mermaid-viewport"
                 contentClass="mermaid-content"
+                wrapperStyle={{
+                  width: '100%',
+                  height: 'clamp(18rem, 40vw, 30rem)',
+                }}
+                contentStyle={{
+                  width: '100%',
+                  minWidth: '100%',
+                  minHeight: '100%',
+                }}
               >
                 <div dangerouslySetInnerHTML={{ __html: svg }} />
               </TransformComponent>
