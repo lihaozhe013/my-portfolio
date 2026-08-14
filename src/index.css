@@ -977,15 +977,16 @@ html[data-locale='zh'] .project-detail-page {
 }
 
 .dialog-title {
-  max-width: 16ch;
-  margin: 2rem 0 1rem;
-  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  max-width: 45em;
+  margin: 1.25rem 0 0.75rem;
+  font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 400;
   letter-spacing: 0.01em;
-  line-height: 0.98;
+  line-height: 1.1;
 }
 
 .dialog-description {
+  max-inline-size: 45em;
   color: var(--text-ink);
 }
 
