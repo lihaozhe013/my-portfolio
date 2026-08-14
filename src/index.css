@@ -306,8 +306,11 @@ html[data-locale='zh'] .body-copy {
 
 .project-detail-page {
   --project-reading-width: var(--measure-en);
+}
 
-  padding-top: clamp(3rem, 8vw, 6rem);
+.section-block.project-detail-page {
+  padding-top: 0;
+  padding-bottom: 2.5rem;
 }
 
 html[data-locale='zh'] .project-detail-page {
@@ -348,7 +351,9 @@ html[data-locale='zh'] .project-detail-page {
 }
 
 .markdown-content {
-  margin-top: clamp(5rem, 12vw, 9rem);
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-line);
   font-size: 0.9rem;
   line-height: 1.75;
 }
