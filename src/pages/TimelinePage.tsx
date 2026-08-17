@@ -25,7 +25,9 @@ export default function TimelinePage() {
           </p>
         </div>
         <div className="project-archive">
-          {portfolioData.projects.map((project) => {
+          {[...portfolioData.projects]
+            .sort((a, b) => a.index.localeCompare(b.index, undefined, { numeric: true }))
+            .map((project) => {
             const text = getProjectText(project, t);
             return (
               <ProjectTrigger
