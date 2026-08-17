@@ -22,6 +22,20 @@
 - If a file exceeds 1,500 lines, assess whether it should be split and extract
   large standalone components into separate files where appropriate.
 
+## Project assets and images
+
+- Project images live alongside their markdown files under
+  `src/content/projects/<project-id>/assets/`. The markdown references them with
+  relative paths like `assets/glb-editor-main.png`.
+- At build time, Vite imports these images via `import.meta.glob` with `?url`,
+  content-hashes them, and outputs all images into a flat `dist/assets/`
+  directory. Different files produce different hashes, so name collisions across
+  projects are safe. The resolver in `projectMarkdown.ts` maps each markdown
+  file's relative image path to the correct hashed URL.
+- When adding a new project with images, place them in
+  `src/content/projects/<project-id>/assets/` and reference them as
+  `assets/<filename>` in the markdown. No manual copying to `public/` is needed.
+
 ## Content and localization
 
 - Read all concrete, user-facing content from JSON files; do not hardcode

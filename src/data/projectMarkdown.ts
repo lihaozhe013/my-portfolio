@@ -4,6 +4,15 @@ const markdownModules = import.meta.glob('../content/projects/**/*.md', {
   query: '?raw',
 }) as Record<string, string>;
 
+const imageModules = import.meta.glob(
+  '../content/projects/**/*.{png,jpg,jpeg,svg,gif,webp}',
+  {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  },
+) as Record<string, string>;
+
 const markdownByFilename = new Map<string, string>();
 
 for (const [path, content] of Object.entries(markdownModules)) {
@@ -24,12 +33,38 @@ for (const [path, content] of Object.entries(markdownModules)) {
   markdownByFilename.set(filename, content);
 }
 
+const imageUrlByPath = new Map<string, string>();
+
+for (const [path, url] of Object.entries(imageModules)) {
+  const projectsIndex = path.indexOf('projects/');
+  if (projectsIndex === -1) {
+    continue;
+  }
+  imageUrlByPath.set(path.slice(projectsIndex + 'projects/'.length), url);
+}
+
 export function hasProjectMarkdown(filename: string): boolean {
   return markdownByFilename.has(filename);
 }
 
 export function getProjectMarkdown(filename: string): string | undefined {
   return markdownByFilename.get(filename);
+}
+
+export function resolveProjectImage(
+  markdownFilename: string,
+  imageSrc: string,
+): string | undefined {
+  const relativeSrc = imageSrc.replace(/^\.\//, '');
+  if (/^(https?:|data:|\/)/.test(relativeSrc)) {
+    return imageSrc;
+  }
+
+  const dir = markdownFilename.includes('/')
+    ? markdownFilename.slice(0, markdownFilename.lastIndexOf('/') + 1)
+    : '';
+
+  return imageUrlByPath.get(dir + relativeSrc);
 }
 
 export interface ProjectMarkdownPreview {

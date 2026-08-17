@@ -142,13 +142,7 @@
         }
       ],
       "markdown": "aio-asset-normalizer/aio-asset-normalizer.md",
-      "technologies": [
-        "Rust",
-        "egui",
-        "three-d",
-        "wgpu",
-        "gltf"
-      ]
+      "technologies": ["Rust", "egui", "three-d", "wgpu", "gltf"]
     },
     {
       "category": "deep-learning",

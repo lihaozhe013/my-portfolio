@@ -2,36 +2,16 @@ import { Children, isValidElement, type ReactNode } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { getProjectMarkdown } from '@/data/projectMarkdown';
+import {
+  getProjectMarkdown,
+  resolveProjectImage,
+} from '@/data/projectMarkdown';
 import { getProjectCategoryLabel, portfolioData } from '@/data/portfolio';
 import { getProjectText } from '@/components/ProjectTrigger';
 import MarkdownCodeBlock from '@/components/MarkdownCodeBlock';
 import MermaidDiagram from '@/components/MermaidDiagram';
 import type { ProjectMeta } from '@/types/content';
 import remarkGfm from 'remark-gfm';
-
-function resolveProjectImageSource(
-  source: string | undefined,
-  project: ProjectMeta,
-) {
-  if (!source || /^(https?:|data:|\/)/.test(source)) {
-    return source;
-  }
-
-  const relativePath = source.replace(/^\.\//, '');
-
-  if (!relativePath.startsWith('assets/')) {
-    return source;
-  }
-
-  const assetPath = relativePath
-    .slice('assets/'.length)
-    .split('/')
-    .map((segment) => encodeURIComponent(segment))
-    .join('/');
-
-  return `${import.meta.env.BASE_URL}project-assets/${encodeURIComponent(project.id)}/${assetPath}`;
-}
 
 function getMermaidSource(children: ReactNode): string | undefined {
   if (!isValidElement<{ className?: string; children?: ReactNode }>(children)) {
@@ -52,7 +32,11 @@ function createMarkdownComponents(project: ProjectMeta): Components {
     img: ({ src, alt, ...props }) => (
       <img
         {...props}
-        src={resolveProjectImageSource(src, project)}
+        src={
+          project.markdown && src
+            ? (resolveProjectImage(project.markdown, src) ?? src)
+            : src
+        }
         alt={alt ?? ''}
         loading="lazy"
       />

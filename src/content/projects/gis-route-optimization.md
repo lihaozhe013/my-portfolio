@@ -12,11 +12,17 @@ even when handling large-scale geographic datasets.
 
 ## Technical approach
 
-- **Language & toolkit:** C++17 with GTK3 for the graphical interface, built and tested on Debian 11 with the MATE desktop environment
-- **Data pipeline:** Raw geographic data (`.bin` format) is parsed and indexed into spatial data structures that power the dynamic, interactive map canvas
-- **Live traffic:** Real-time traffic data is fetched from the TomTom Traffic API via **libcurl** and rendered as colour-coded congestion overlays on the map where available
-- **Concurrency:** A multithreaded design keeps map rendering and route calculations responsive, ensuring the UI never blocks during heavy computation
-- **Shared libraries:** Dynamically links against GTK3, libcurl, and several other shared libraries at runtime rather than static linking
+- **Language & toolkit:** C++17 with GTK3 for the graphical interface, built and
+  tested on Debian 11 with the MATE desktop environment
+- **Data pipeline:** Raw geographic data (`.bin` format) is parsed and indexed
+  into spatial data structures that power the dynamic, interactive map canvas
+- **Live traffic:** Real-time traffic data is fetched from the TomTom Traffic
+  API via **libcurl** and rendered as colour-coded congestion overlays on the
+  map where available
+- **Concurrency:** A multithreaded design keeps map rendering and route
+  calculations responsive, ensuring the UI never blocks during heavy computation
+- **Shared libraries:** Dynamically links against GTK3, libcurl, and several
+  other shared libraries at runtime rather than static linking
 
 ### Routing algorithms
 
@@ -26,8 +32,8 @@ is known.
 
 For multi-stop delivery planning, the system uses a **multi-start greedy**
 construction heuristic followed by **simulated annealing** to refine the
-solution and escape local optima, producing near-optimal routes across dozens
-of stops in seconds.
+solution and escape local optima, producing near-optimal routes across dozens of
+stops in seconds.
 
 ![Diagram illustrating the route planning workflow](https://via.placeholder.com/900x350?text=Route+Planning+Flow+Diagram)
 
@@ -53,8 +59,8 @@ flowchart TD
 
 The diagram above shows the primary data flow: raw map files are parsed into a
 spatial index, which feeds both the rendering pipeline and the routing engine.
-Traffic overlays are merged at render time, and all user interactions are handled
-through the GTK3 event loop.
+Traffic overlays are merged at render time, and all user interactions are
+handled through the GTK3 event loop.
 
 ## User experience
 
@@ -73,8 +79,10 @@ points of interest.
 
 - **Import** — Load a `.bin` map file to populate the map canvas
 - **Search** — Enter two street names to locate an intersection
-- **Navigate** — Pan by dragging and zoom with the scroll wheel or toolbar buttons
-- **Route planning** — Select multiple stops and compute an optimised delivery route
+- **Navigate** — Pan by dragging and zoom with the scroll wheel or toolbar
+  buttons
+- **Route planning** — Select multiple stops and compute an optimised delivery
+  route
 - **Traffic toggle** — Show or hide the real-time traffic overlay
 
 ## Presentation
