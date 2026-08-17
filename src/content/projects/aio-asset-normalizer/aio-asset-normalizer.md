@@ -13,20 +13,15 @@ AIO Asset Normalizer began as a Blender-dependent multi-format converter and has
 - Mesh material and PBR texture replacement
 - BVH playback, trimming, generic skeleton mapping, and GLB animation export
 - Reusable Mapping files for different motion-capture systems and character models
+- CLI mode for scripting batch operations on large volumes of similar assets
 
 What makes the project stand out is the engineering approach: the entire GLB loading, editing, animation processing, and export pipeline is implemented in Rust, while the existing `egui` + `three-d` foundation provides the window, 3D canvas, orbit camera, axes, grid, and skeleton visualization.
 
 ## Screenshots
 
-![Screenshot placeholder — GLB Editor main view](images/screenshots/glb-editor-main.png)
+![GLB Editor main view](assets/glb-editor-main.png)
 
-![Screenshot placeholder — Animation timeline and playback](images/screenshots/animation-timeline.png)
-
-![Screenshot placeholder — PBR texture replacement](images/screenshots/texture-replacement.png)
-
-![Screenshot placeholder — BVH Studio](images/screenshots/bvh-studio.png)
-
-![Screenshot placeholder — Export options](images/screenshots/export-dialog.png)
+![Export Options](assets/detailed-right-panel.png)
 
 ## Design Goals
 
@@ -126,5 +121,6 @@ The GLB read/write layer preserves the original JSON and BIN data and changes on
 - **Decoupled background processing.** Heavy document and BVH work runs on worker threads and communicates with the UI through message passing, keeping the interface responsive.
 - **A reusable retargeting contract.** Versioned Mapping files decouple motion-capture source conventions from target character naming, making the tool work across different capture systems and models.
 - **Explicit extension handling.** Features that cannot be safely processed are reported instead of corrupted silently.
+- **CLI mode for batch scripting.** The project provides a CLI mode that enables writing scripts for batch processing of large volumes of similar assets, supporting automation of repetitive workflows.
 
 The project is licensed under the MIT License.

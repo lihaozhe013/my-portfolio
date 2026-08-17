@@ -118,6 +118,15 @@
       "description": "A lightweight, database-free resource hosting server with markdown rendering, media playback, webpage hosting, private links, uploads, and search.",
       "title": "StreamFile Server"
     },
+    "aio-asset-normalizer": {
+      "fullProjectHighlights": [
+        "纯 Rust 实现的 GLB 编辑与导出管线",
+        "BVH 动作重定向与可复用映射契约",
+        "CLI 模式支持批量脚本处理"
+      ],
+      "description": "一款纯 Rust 桌面应用，用于标准化 .glb 3D 资产，支持 GLB 编辑、动画播放、BVH 动作重定向及 CLI 批量处理——无需 Blender 或外部依赖。",
+      "title": "AIO Asset Normalizer"
+    },
     "tradeflow-system": {
       "fullProjectHighlights": [
         "交易与库存的事实来源模型",

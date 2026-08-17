@@ -32,7 +32,8 @@ function parseProjectMarkdown(value: unknown): string | undefined {
   if (
     typeof value !== 'string' ||
     value.length === 0 ||
-    value !== value.split('/').at(-1) ||
+    value.includes('\\') ||
+    value.endsWith('/') ||
     !value.endsWith('.md')
   ) {
     throw new Error(`Invalid project Markdown filename: ${String(value)}`);

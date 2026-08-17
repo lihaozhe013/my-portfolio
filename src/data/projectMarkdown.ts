@@ -1,4 +1,4 @@
-const markdownModules = import.meta.glob('../content/projects/*.md', {
+const markdownModules = import.meta.glob('../content/projects/**/*.md', {
   eager: true,
   import: 'default',
   query: '?raw',
@@ -7,7 +7,11 @@ const markdownModules = import.meta.glob('../content/projects/*.md', {
 const markdownByFilename = new Map<string, string>();
 
 for (const [path, content] of Object.entries(markdownModules)) {
-  const filename = path.split('/').at(-1);
+  const projectsIndex = path.indexOf('projects/');
+  const filename =
+    projectsIndex === -1
+      ? path.split('/').at(-1)
+      : path.slice(projectsIndex + 'projects/'.length);
 
   if (!filename) {
     continue;
