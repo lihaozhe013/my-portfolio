@@ -6,12 +6,12 @@
     "copyCode": "Copy code",
     "copyFailed": "Copy failed",
     "email": "Write an email",
+    "exploreFullProject": "Explore the full project",
     "openLink": "Open link",
     "previewProject": "Preview project",
-    "resetDiagram": "Reset diagram",
-    "exploreFullProject": "Explore the full project",
     "readDetails": "Explore the full project",
     "readProject": "Read project",
+    "resetDiagram": "Reset diagram",
     "selectedWorks": "View selected works",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out"
@@ -46,17 +46,17 @@
     "portraitCaption": ""
   },
   "labels": {
-    "fullProject": "Full project",
-    "fullProjectContents": "What’s inside",
     "coursework": "Relevant coursework",
     "featured": "Featured",
+    "fullProject": "Full project",
+    "fullProjectContents": "What’s inside",
     "language": "Language",
-    "projectLinks": "Project links",
-    "readingTime": "{{count}} min read",
-    "technologies": "Built with",
     "mermaidDiagram": "Mermaid diagram",
     "mermaidRenderError": "This diagram could not be rendered. The Mermaid source is shown below.",
-    "renderingDiagram": "Rendering diagram…"
+    "projectLinks": "Project links",
+    "readingTime": "{{count}} min read",
+    "renderingDiagram": "Rendering diagram…",
+    "technologies": "Built with"
   },
   "nav": {
     "about": "About",
@@ -80,13 +80,22 @@
     }
   },
   "projects": {
+    "aio-asset-normalizer": {
+      "description": "A pure-Rust desktop application for standardizing .glb 3D assets, featuring GLB editing, animation playback, BVH motion retargeting, and CLI batch processing — no Blender or external dependencies required.",
+      "fullProjectHighlights": [
+        "Pure-Rust GLB editing and export pipeline",
+        "BVH motion retargeting with reusable mapping contracts",
+        "CLI mode for batch scripting"
+      ],
+      "title": "AIO Asset Normalizer"
+    },
     "battle-royal-moba": {
+      "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. The project explores how a MOBA-style command model, hero combat, bot behavior pathfinding.",
       "fullProjectHighlights": [
         "Authoritative simulation architecture",
         "Shared player and bot command pipeline",
         "C++ and Godot data flow"
       ],
-      "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. The project explores how a MOBA-style command model, hero combat, bot behavior pathfinding.",
       "title": "Battle Royal Moba Game"
     },
     "dinosaur-game": {
@@ -94,12 +103,12 @@
       "title": "Dinosaur Game"
     },
     "gis-route-optimization": {
+      "description": "A geographic information system built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
       "fullProjectHighlights": [
         "Dijkstra and A* route planning",
         "Multi-stop optimization strategy",
         "Traffic-aware map experience"
       ],
-      "description": "A geographic information system built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
       "title": "GIS Route Optimization Application"
     },
     "greedy-mouse-game": {
@@ -118,22 +127,13 @@
       "description": "A lightweight, database-free resource hosting server with markdown rendering, media playback, webpage hosting, private links, uploads, and search.",
       "title": "StreamFile Server"
     },
-    "aio-asset-normalizer": {
-      "fullProjectHighlights": [
-        "Pure-Rust GLB editing and export pipeline",
-        "BVH motion retargeting with reusable mapping contracts",
-        "CLI mode for batch scripting"
-      ],
-      "description": "A pure-Rust desktop application for standardizing .glb 3D assets, featuring GLB editing, animation playback, BVH motion retargeting, and CLI batch processing — no Blender or external dependencies required.",
-      "title": "AIO Asset Normalizer"
-    },
     "tradeflow-system": {
+      "description": "Tradeflow System is a lightweight trade and inventory management system for small businesses. It brings purchasing, sales, inventory, partner settlements, analysis, and operational governance into one workspace.",
       "fullProjectHighlights": [
         "Transaction and inventory source of truth",
         "Financial and analytical data flow",
         "Frontend, API, and database architecture"
       ],
-      "description": "Tradeflow System is a lightweight trade and inventory management system for small businesses. It brings purchasing, sales, inventory, partner settlements, analysis, and operational governance into one workspace.",
       "title": "TradeFlow System"
     }
   },

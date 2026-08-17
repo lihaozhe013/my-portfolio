@@ -52,7 +52,7 @@
       "category": "game",
       "featured": true,
       "id": "battle-royal-moba",
-      "index": "01",
+      "index": "03",
       "links": [
         {
           "href": "https://github.com/lihaozhe013/battle-royale-moba-godot",
@@ -104,7 +104,7 @@
       "category": "algorithms",
       "featured": false,
       "id": "gis-route-optimization",
-      "index": "03",
+      "index": "05",
       "links": [
         {
           "href": "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE297-OP2.pdf",
@@ -133,7 +133,7 @@
       "category": "software",
       "featured": true,
       "id": "aio-asset-normalizer",
-      "index": "05",
+      "index": "01",
       "links": [
         {
           "href": "https://github.com/lihaozhe013/aio-asset-normalizer",
@@ -200,7 +200,7 @@
       "category": "embedded",
       "featured": false,
       "id": "runner-game",
-      "index": "10",
+      "index": "7",
       "links": [
         {
           "href": "https://github.com/lihaozhe013/ece243_runner_game",

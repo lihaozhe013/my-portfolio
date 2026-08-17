@@ -6,12 +6,12 @@
     "copyCode": "复制代码",
     "copyFailed": "复制失败",
     "email": "Write an email",
+    "exploreFullProject": "查看完整项目",
     "openLink": "Open link",
     "previewProject": "查看项目简介",
-    "resetDiagram": "重置图表",
-    "exploreFullProject": "查看完整项目",
     "readDetails": "查看完整项目",
     "readProject": "Read project",
+    "resetDiagram": "重置图表",
     "selectedWorks": "View selected works",
     "zoomIn": "放大图表",
     "zoomOut": "缩小图表"
@@ -46,17 +46,17 @@
     "portraitCaption": ""
   },
   "labels": {
-    "fullProject": "完整项目",
-    "fullProjectContents": "内容概览",
     "coursework": "Relevant coursework",
     "featured": "Featured",
+    "fullProject": "完整项目",
+    "fullProjectContents": "内容概览",
     "language": "Language",
-    "projectLinks": "项目链接",
-    "readingTime": "约 {{count}} 分钟阅读",
-    "technologies": "Built with",
     "mermaidDiagram": "Mermaid 图表",
     "mermaidRenderError": "图表渲染失败，下面显示 Mermaid 源码。",
-    "renderingDiagram": "正在渲染图表……"
+    "projectLinks": "项目链接",
+    "readingTime": "约 {{count}} 分钟阅读",
+    "renderingDiagram": "正在渲染图表……",
+    "technologies": "Built with"
   },
   "nav": {
     "about": "About",
@@ -80,13 +80,22 @@
     }
   },
   "projects": {
+    "aio-asset-normalizer": {
+      "description": "一款纯 Rust 桌面应用，用于标准化 .glb 3D 资产，支持 GLB 编辑、动画播放、BVH 动作重定向及 CLI 批量处理——无需 Blender 或外部依赖。",
+      "fullProjectHighlights": [
+        "纯 Rust 实现的 GLB 编辑与导出管线",
+        "BVH 动作重定向与可复用映射契约",
+        "CLI 模式支持批量脚本处理"
+      ],
+      "title": "AIO Asset Normalizer"
+    },
     "battle-royal-moba": {
+      "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. ",
       "fullProjectHighlights": [
         "权威模拟架构",
         "玩家与机器人共享的指令管线",
         "C++ 与 Godot 的数据流"
       ],
-      "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. ",
       "title": "Battle Royal Moba Game"
     },
     "dinosaur-game": {
@@ -94,12 +103,12 @@
       "title": "Dinosaur Game"
     },
     "gis-route-optimization": {
+      "description": "A geographic information system built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
       "fullProjectHighlights": [
         "Dijkstra 与 A* 路径规划",
         "多站点路线优化策略",
         "结合交通信息的地图体验"
       ],
-      "description": "A geographic information system built with C++ and GTK, featuring real-time pathfinding algorithms and interactive map visualization.",
       "title": "GIS Route Optimization Application"
     },
     "greedy-mouse-game": {
@@ -118,22 +127,13 @@
       "description": "A lightweight, database-free resource hosting server with markdown rendering, media playback, webpage hosting, private links, uploads, and search.",
       "title": "StreamFile Server"
     },
-    "aio-asset-normalizer": {
-      "fullProjectHighlights": [
-        "纯 Rust 实现的 GLB 编辑与导出管线",
-        "BVH 动作重定向与可复用映射契约",
-        "CLI 模式支持批量脚本处理"
-      ],
-      "description": "一款纯 Rust 桌面应用，用于标准化 .glb 3D 资产，支持 GLB 编辑、动画播放、BVH 动作重定向及 CLI 批量处理——无需 Blender 或外部依赖。",
-      "title": "AIO Asset Normalizer"
-    },
     "tradeflow-system": {
+      "description": "A full-stack trade management web app built for a small business, developed and deployed from design through production. ",
       "fullProjectHighlights": [
         "交易与库存的事实来源模型",
         "财务与分析数据流",
         "前端、API 与数据库架构"
       ],
-      "description": "A full-stack trade management web app built for a small business, developed and deployed from design through production. ",
       "title": "TradeFlow System"
     }
   },

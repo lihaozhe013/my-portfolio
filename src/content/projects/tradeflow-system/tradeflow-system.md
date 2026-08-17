@@ -62,17 +62,17 @@ billing workflows.
 
 <!-- Screenshot: Finance panel showing receivables/payables summary and payment history -->
 
-![Receivables Overview](assets/outbound.png)
-*Receivables overview — outstanding amounts per customer.*
+![Receivables Overview](assets/outbound.png) _Receivables overview — outstanding
+amounts per customer._
 
-![Receivables Detail](assets/outbound2.png)
-*Receivables detail — modal showing line-item breakdown for a single receivable.*
+![Receivables Detail](assets/outbound2.png) _Receivables detail — modal showing
+line-item breakdown for a single receivable._
 
-![Payables Overview](assets/payable1.png)
-*Payables overview — outstanding amounts per supplier.*
+![Payables Overview](assets/payable1.png) _Payables overview — outstanding
+amounts per supplier._
 
-![Payables Detail](assets/payable2.png)
-*Payables detail — modal showing line-item breakdown for a single payable.*
+![Payables Detail](assets/payable2.png) _Payables detail — modal showing
+line-item breakdown for a single payable._
 
 - Receivables & payables tracking
 - Payment recording with settlement comparison
@@ -103,14 +103,14 @@ user role while the backend enforces permissions and records audit events.
 
 <!-- Screenshot: User administration page showing role assignments and audit log -->
 
-![Login Page](assets/login.png)
-*Login page — JWT-based authentication with role selection.*
+![Login Page](assets/login.png) _Login page — JWT-based authentication with role
+selection._
 
-![User Administration](assets/user-admin.png)
-*User administration — role assignments and account management.*
+![User Administration](assets/user-admin.png) _User administration — role
+assignments and account management._
 
-![Audit Log](assets/audit.png)
-*Audit log — system-wide event tracking for governance.*
+![Audit Log](assets/audit.png) _Audit log — system-wide event tracking for
+governance._
 
 - Reader / Editor / Superuser roles
 - User administration & audit log
