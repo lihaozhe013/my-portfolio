@@ -1,130 +1,146 @@
-Tradeflow System is a lightweight trade and inventory management system for
-small businesses. It brings purchasing, sales, inventory, partner settlements,
-analysis, and operational governance into one workspace.
+# Tradeflow System
 
-The project is designed to keep day-to-day transaction data connected to the
-business views that depend on it, so inventory, balances, dashboards, and
-reports remain part of the same operational model.
+> A lightweight, full-stack trade and inventory management platform for small businesses — built with React, Express, and PostgreSQL.
 
-## Core Capabilities
+Tradeflow brings purchasing, sales, inventory tracking, partner settlements, financial analysis, and role-based access control into one cohesive workspace. Day-to-day transaction data stays connected to every business view that depends on it, so dashboards, balances, and reports are always in sync.
 
-### Operations and master data
+---
 
-- Record inbound purchases and outbound sales, including batch operations.
-- Maintain products, product categories, business partners, and partner-specific
-  price history.
-- Track current stock together with the movement history behind it.
-- Provide overview dashboards for sales, inventory changes, and low-stock
-  products.
+## At a Glance
 
-### Financial visibility
+| | |
+| --- | --- |
+| **Tech Stack** | React 19 · Vite · Ant Design · Express · TypeScript · Prisma · PostgreSQL |
+| **Core Domain** | Trade operations, inventory, finance, analytics |
+| **Architecture** | Single-page app → REST API → Domain services → Relational store |
+| **Key Qualities** | Movement-based inventory · derived financial positions · role-aware UI · multilingual | 
 
-- Monitor customer receivables and supplier payables.
-- Record payments and compare transaction totals with settled amounts.
-- Group transaction records by invoice to support invoicing workflows and
-  account review.
+---
 
-### Analysis and reporting
+## Feature Showcase
 
-- Analyze purchasing and sales over selected time periods, partners, and
-  products.
-- Present summarized statistics alongside transaction-level details.
-- Export operational, financial, inventory, and analytical data for further
-  processing.
+### 1. Operations & Master Data
 
-### Governance and collaboration
+Record purchases and sales (including batch operations), manage products, categories, business partners, and partner-specific price history.
 
-- Authenticate users and apply role-aware access control.
-- Support reader, editor, and superuser responsibilities.
-- Provide user administration and an audit log for traceability.
-- Support a multilingual interface and configurable business presentation
-  options.
+<!-- Screenshot: Main operations dashboard showing purchase/sale records and quick-action buttons -->
+![Operations Dashboard](placeholder-operations-dashboard.png)
 
-## Design Ideas
+- Inbound & outbound transaction recording
+- Product catalogue with categories
+- Partner management with historical pricing
 
-### Transactions are the operational source of truth
+---
 
-Purchasing and sales records describe the business events that change stock and
-financial positions. Higher-level views are derived from these records instead
-of requiring users to maintain separate, disconnected summaries.
+### 2. Inventory Management
 
-### Inventory is movement-based and repairable
+Real-time stock levels backed by a full movement history. The movement ledger can be rebuilt from transaction data, keeping inventory recoverable and auditable.
 
-Inbound movements increase stock and outbound movements decrease it. The
-inventory ledger records these changes, while the current inventory view serves
-fast operational reads. Because the ledger can be rebuilt from the underlying
-transaction history, inventory remains recoverable when a derived view needs to
-be repaired.
+<!-- Screenshot: Inventory view with stock levels table and movement history sidebar -->
+![Inventory View](placeholder-inventory-view.png)
 
-### Financial positions are derived from activity
+- Current stock with movement-based tracking
+- Low-stock alerts on overview dashboards
+- Repairable ledger derived from transaction history
 
-Receivables and payables combine transaction totals with recorded payments. This
-keeps customer and supplier balances tied to the same records used for
-operations, while invoice and summary caches make repeated review more
-efficient.
+---
 
-### Expensive views are computed deliberately
+### 3. Financial Visibility
 
-Overview statistics and analytical results are generated when needed and kept in
-lightweight caches for subsequent reads. This separates transactional writes
-from read-heavy dashboards without introducing another service boundary.
+Monitor customer receivables and supplier payables, record payments, and reconcile against transaction totals. Invoice grouping supports structured billing workflows.
 
-### Access control is part of the workflow
+<!-- Screenshot: Finance panel showing receivables/payables summary and payment history -->
+![Finance Panel](placeholder-finance-panel.png)
 
-Authentication, role permissions, write protection, and audit visibility are
-implemented across the frontend and API. The interface can adapt to a user's
-role, while the backend remains the final enforcement point.
+- Receivables & payables tracking
+- Payment recording with settlement comparison
+- Invoice grouping for account review
 
-## High-Level Architecture
+---
+
+### 4. Analytics & Reporting
+
+Analyze purchasing and sales across time periods, partners, and products. Summarized statistics sit alongside transaction-level detail, and data can be exported for external processing.
+
+<!-- Screenshot: Analytics page with date-range selector, summary charts, and export button -->
+![Analytics Dashboard](placeholder-analytics-dashboard.png)
+
+- Period-based purchasing & sales analysis
+- Chart-driven summaries with drill-down detail
+- Spreadsheet export for all operational, financial, and analytical data
+
+---
+
+### 5. Access Control & Governance
+
+JWT-based authentication with role-aware navigation. The interface adapts per user role while the backend enforces permissions and records audit events.
+
+<!-- Screenshot: User administration page showing role assignments and audit log -->
+![User Administration](placeholder-user-admin.png)
+
+- Reader / Editor / Superuser roles
+- User administration & audit log
+- Multilingual interface with configurable presentation options
+
+---
+
+## Architecture Overview
 
 ```mermaid
 flowchart LR
-  accTitle: Tradeflow System high-level architecture
-  accDescr: The React frontend communicates with the Express API, which connects domain services to authentication, Prisma data access, PostgreSQL, configuration caches, and export services.
-  UI[React SPA] -->|HTTP and JSON| API[Express API]
-  API --> AUTH[Authentication and authorization]
-  API --> DOMAIN[Domain routes and services]
-  DOMAIN --> ORM[Prisma data access]
+  accTitle: Tradeflow high-level architecture
+  accDescr: React SPA talks to Express API, which routes through auth and domain services to Prisma/PostgreSQL, caches, and export services.
+  UI[React SPA] -->|HTTP| API[Express API]
+  API --> AUTH[Auth & RBAC]
+  API --> DOMAIN[Domain Services]
+  DOMAIN --> ORM[Prisma ORM]
   ORM --> DB[(PostgreSQL)]
-  DOMAIN --> CACHE[File-backed configuration and caches]
-  DOMAIN --> EXPORT[Export services]
+  DOMAIN --> CACHE[Config & Caches]
+  DOMAIN --> EXPORT[Export]
 ```
 
-- **Frontend** — A React 19 and Vite single-page application organized around
-  operational pages, reusable API hooks, role-aware navigation, charts, forms,
-  and localization.
-- **Backend** — A Node.js and TypeScript service built with Express. Route
-  modules expose the application capabilities, while domain services handle
-  inventory updates, aggregation, analysis, invoicing, and exports.
-- **Persistence** — PostgreSQL stores transaction records, master data,
-  inventory movements, payments, users, and audit events. Prisma provides the
-  typed data-access layer.
-- **Derived state** — Inventory totals, overview snapshots, invoice groupings,
-  and analytical results are maintained as derived state close to the API so
-  they can be refreshed independently of the core transaction history.
-- **Configuration and presentation** — Business metadata, selectable options,
-  localization, and export behavior can be adapted without changing the main
-  application workflows.
+| Layer | Description |
+| --- | --- |
+| **Frontend** | React 19 + Vite SPA — operational pages, reusable hooks, charts, forms, i18n |
+| **Backend** | Express + TypeScript — route modules, domain services, inventory & finance logic |
+| **Data** | PostgreSQL via typed Prisma ORM — transactions, master data, movements, audit |
+| **Derived State** | Inventory totals, overview snapshots, invoice groupings, analytics — refreshed independently |
 
-## Technology Stack
+---
 
-| Layer       | Technologies                                                        |
-| ----------- | ------------------------------------------------------------------- |
-| Frontend    | React 19, Vite, Ant Design, Recharts, i18next                       |
-| Backend     | Node.js, TypeScript, Express                                        |
-| Data access | Prisma ORM, PostgreSQL                                              |
-| Security    | JWT authentication, Argon2 password hashing, role-based permissions |
-| Reporting   | Server-side aggregation, file-backed caches, spreadsheet export     |
+## Deployment & Production
 
-## Project Structure
+Tradeflow ships with a complete Dockerfile for one-command deployment. The container image bundles the frontend build and backend runtime, ready to run on any Docker-compatible host — local machines, cloud VMs, or container orchestration platforms.
+
+> **Production case:** Tradeflow was customized and deployed on an AWS Lightsail instance for a small business, where it has been running continuously for over two years. Updates are delivered through Argo CD with zero-downtime rollouts, demonstrating the system's stability in a real operational environment.
+
+- Full-stack Docker image — single container, no manual setup
+- Persistent storage for database and file exports
+- Compatible with CI/CD pipelines (Argo CD, GitHub Actions, etc.)
+
+---
+
+## Tech Stack
+
+| Layer | Technologies |
+| --- | --- |
+| Frontend | React 19, Vite, Ant Design, Recharts, i18next |
+| Backend | Node.js, TypeScript, Express |
+| Data Access | Prisma ORM, PostgreSQL |
+| Security | JWT, Argon2 hashing, role-based permissions |
+| Reporting | Server-side aggregation, file-backed caches, spreadsheet export |
+
+---
+
+## Project Layout
 
 ```text
-frontend/      React application and user-facing workflows
-backend/       Express API, domain services, and persistence integration
-build-config/  Application metadata and configurable presentation behavior
-docs/          Architecture, data-flow, and project reference documents
+frontend/      → React SPA — pages, hooks, components, i18n
+backend/       → Express API — routes, services, Prisma schema
+build-config/  → Metadata & presentation config
+docs/          → Architecture & data-flow references
 ```
 
-Tradeflow System is intended as a focused foundation for businesses that need
-connected trade operations and inventory visibility without the weight of a
-large enterprise platform.
+---
+
+*Tradeflow is designed as a focused, production-ready foundation for businesses that need connected trade operations without the overhead of a large enterprise platform.*
