@@ -30,7 +30,7 @@ categories, business partners, and partner-specific price history.
 
 <!-- Screenshot: Main operations dashboard showing purchase/sale records and quick-action buttons -->
 
-![Operations Dashboard](placeholder-operations-dashboard.png)
+![Operations Dashboard](assets/dashboard.png)
 
 - Inbound & outbound transaction recording
 - Product catalogue with categories
@@ -46,7 +46,7 @@ auditable.
 
 <!-- Screenshot: Inventory view with stock levels table and movement history sidebar -->
 
-![Inventory View](placeholder-inventory-view.png)
+![Inventory View](assets/inventory-view.png)
 
 - Current stock with movement-based tracking
 - Low-stock alerts on overview dashboards
@@ -62,7 +62,17 @@ billing workflows.
 
 <!-- Screenshot: Finance panel showing receivables/payables summary and payment history -->
 
-![Finance Panel](placeholder-finance-panel.png)
+![Receivables Overview](assets/outbound.png)
+*Receivables overview — outstanding amounts per customer.*
+
+![Receivables Detail](assets/outbound2.png)
+*Receivables detail — modal showing line-item breakdown for a single receivable.*
+
+![Payables Overview](assets/payable1.png)
+*Payables overview — outstanding amounts per supplier.*
+
+![Payables Detail](assets/payable2.png)
+*Payables detail — modal showing line-item breakdown for a single payable.*
 
 - Receivables & payables tracking
 - Payment recording with settlement comparison
@@ -78,7 +88,7 @@ exported for external processing.
 
 <!-- Screenshot: Analytics page with date-range selector, summary charts, and export button -->
 
-![Analytics Dashboard](placeholder-analytics-dashboard.png)
+![Analytics Dashboard](assets/analytics-dashboard.png)
 
 - Period-based purchasing & sales analysis
 - Chart-driven summaries with drill-down detail
@@ -93,7 +103,14 @@ user role while the backend enforces permissions and records audit events.
 
 <!-- Screenshot: User administration page showing role assignments and audit log -->
 
-![User Administration](placeholder-user-admin.png)
+![Login Page](assets/login.png)
+*Login page — JWT-based authentication with role selection.*
+
+![User Administration](assets/user-admin.png)
+*User administration — role assignments and account management.*
+
+![Audit Log](assets/audit.png)
+*Audit log — system-wide event tracking for governance.*
 
 - Reader / Editor / Superuser roles
 - User administration & audit log

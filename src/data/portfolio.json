@@ -80,7 +80,7 @@
           "type": "github"
         }
       ],
-      "markdown": "tradeflow-system.md",
+      "markdown": "tradeflow-system/tradeflow-system.md",
       "technologies": [
         "TypeScript",
         "React",
