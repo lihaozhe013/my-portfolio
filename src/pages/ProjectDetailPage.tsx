@@ -12,6 +12,7 @@ import MarkdownCodeBlock from '@/components/MarkdownCodeBlock';
 import MermaidDiagram from '@/components/MermaidDiagram';
 import type { ProjectMeta } from '@/types/content';
 import remarkGfm from 'remark-gfm';
+import remarkHtmlComments from '@/plugins/remarkHtmlComments';
 
 function getMermaidSource(children: ReactNode): string | undefined {
   if (!isValidElement<{ className?: string; children?: ReactNode }>(children)) {
@@ -123,7 +124,7 @@ export default function ProjectDetailPage() {
 
         <article className="markdown-content">
           <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
+            remarkPlugins={[remarkGfm, remarkHtmlComments]}
             components={createMarkdownComponents(project)}
           >
             {markdown}
