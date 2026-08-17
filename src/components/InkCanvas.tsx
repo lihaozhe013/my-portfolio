@@ -39,8 +39,8 @@ interface PointerState {
   pulseAt: number;
 }
 
-function getModeStrength(pathname: string): number {
-  return pathname === '/' ? 1 : 0.45;
+function getModeStrength(_pathname: string): number {
+  return 1;
 }
 
 function createPointerState(): PointerState {
