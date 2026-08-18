@@ -1,6 +1,16 @@
-# MarkText Agent
-
 A desktop Markdown editor based on a fork of MarkText that brings Agent collaboration directly into the writing workflow. It preserves MarkText's lightweight, focused editing experience and adds Agent conversation, local modifications, full-document rewriting, and multimodal input capabilities for real document work.
+
+## Screenshots
+
+![Sample document: a Markdown file containing headings, lists, code blocks, and tables](assets/showcase-01-sample-document.png)
+
+![Selecting "Edit Document" in the Agent panel and entering a natural-language rewriting instruction](assets/showcase-02-edit-command.png)
+
+![](assets/showcase-03.png)
+
+![](assets/showcase-04-settings.png)
+
+![Dragging in a flow chart or PDF page to demonstrate multimodal input and analysis](assets/showcase-05-multimodal-input.png)
 
 ## Project Overview
 
@@ -14,6 +24,8 @@ A desktop Markdown editor based on a fork of MarkText that brings Agent collabor
 Traditional AI writing tools can usually only generate a new paragraph of content, and the user still has to manually copy, locate, and merge the result. For Markdown documents, this process can easily break formatting, alter code blocks by mistake, or overwrite recent manual edits.
 
 MarkText + Agent takes "the current document" as context, placing Agent capabilities in the editor's sidebar. Users can ask questions and request changes around the content they are editing, then safely apply the results back to the original text after confirming them.
+
+On a personal level, I have been actively learning how Agents work—how they reason, plan, and act—and I regularly encourage the people around me to embrace Agent-powered tools in their daily lives. This project doubles as an accessible entry point for that purpose: because it embeds Agent capabilities inside a familiar Markdown editor, family and friends who are new to AI can experience the power and efficiency of Agents without leaving the writing workflow they already know.
 
 This project is forked from [MarkText](https://marktext.app/) and inherits its WYSIWYG preview, source-code mode, focus mode, typewriter mode, multi-tab editing, theme switching, image pasting, and fundamental capabilities such as CommonMark / GFM, math formulas, Mermaid, PlantUML, tables, task lists, and HTML / PDF export. The focus of the fork is on deeply integrating the Agent experience rather than reimplementing these features.
 
@@ -62,24 +74,7 @@ The project is built on Electron, Vue 3, TypeScript, and Pinia. Agent capabiliti
 
 Local edits use a structured editing protocol combined with exact text matching, together with revision records to implement commit, discard, and undo. The editor supports both WYSIWYG and source-code modes; Agent edits are applied to the currently active editing surface, keeping both editing approaches consistent.
 
-## Screenshots
-
-![Sample document: a Markdown file containing headings, lists, code blocks, and tables](docs/assets/showcase-01-sample-document.png)
-
-![Selecting "Edit Document" in the Agent panel and entering a natural-language rewriting instruction](docs/assets/showcase-02-edit-command.png)
-
-![Modification range markers, line count changes, and before/after diff preview](docs/assets/showcase-03-diff-preview.png)
-
-![Switching to "Answer" mode to let the Agent summarize the document and suggest structural improvements](docs/assets/showcase-04-answer-mode.png)
-
-![Dragging in a flow chart or PDF page to demonstrate multimodal input and analysis](docs/assets/showcase-05-multimodal-input.png)
-
-![Clicking "Undo Agent Edit" to restore the document to its pre-operation state](docs/assets/showcase-06-undo-ai-edit.png)
 
 ## Project Highlights
 
 This is a productization effort around Agent applied to real writing scenarios: it goes beyond simply wiring a model into the editor to address the full experience—context management, multi-model configuration, multimodal attachments, edit conflicts, result review, failure recovery, and reversible operations.
-
-**Keywords**: Agent Editor · Markdown · Desktop App · WYSIWYG · Multimodal Input · Precise Editing · Revision History
-
-![MarkText editor](docs/assets/marktext.png)
