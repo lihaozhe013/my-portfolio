@@ -89,6 +89,15 @@
       ],
       "title": "AIO Asset Normalizer"
     },
+    "marktext-ai": {
+      "description": "基于 MarkText 分支的桌面 Markdown 编辑器，将 Agent 协作融入写作流程。保留 MarkText 轻量编辑体验的同时，新增对话、局部修改、全文重写与多模态输入能力。",
+      "fullProjectHighlights": [
+        "三种 Agent 工作模式：问答、编辑、重写",
+        "围绕文档的连续对话",
+        "图片与 PDF 多模态输入"
+      ],
+      "title": "MarkText Agent"
+    },
     "battle-royal-moba": {
       "description": "A top-down 2.5D MOBA game built around a clear separation between authoritative gameplay simulation and real-time presentation. ",
       "fullProjectHighlights": [

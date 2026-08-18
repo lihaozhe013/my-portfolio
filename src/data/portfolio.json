@@ -49,10 +49,25 @@
   },
   "projects": [
     {
-      "category": "game",
+      "category": "software",
       "featured": true,
-      "id": "battle-royal-moba",
+      "id": "marktext-ai",
       "index": "03",
+      "links": [
+        {
+          "href": "https://github.com/lihaozhe013/marktext-ai",
+          "label": "GitHub",
+          "type": "github"
+        }
+      ],
+      "markdown": "marktext-ai/marktext-ai.md",
+      "technologies": ["Electron", "Vue 3", "TypeScript", "Pinia", "Markdown"]
+    },
+    {
+      "category": "game",
+      "featured": false,
+      "id": "battle-royal-moba",
+      "index": "04",
       "links": [
         {
           "href": "https://github.com/lihaozhe013/battle-royale-moba-godot",
@@ -104,7 +119,7 @@
       "category": "algorithms",
       "featured": false,
       "id": "gis-route-optimization",
-      "index": "05",
+      "index": "06",
       "links": [
         {
           "href": "https://lihaozhe013.github.io/lihaozhe-website/portfolio/ECE297-OP2.pdf",
@@ -148,7 +163,7 @@
       "category": "deep-learning",
       "featured": false,
       "id": "license-plate-recognition",
-      "index": "04",
+      "index": "05",
       "links": [
         {
           "href": "https://github.com/lihaozhe013/APS360-Project-License-Plate-Recognition",
@@ -173,7 +188,7 @@
       "category": "embedded",
       "featured": false,
       "id": "dinosaur-game",
-      "index": "06",
+      "index": "07",
       "links": [
         {
           "href": "https://youtu.be/_ZocQdUdjPw?si=gIY0hTswSoknH1XM",
@@ -200,7 +215,7 @@
       "category": "embedded",
       "featured": false,
       "id": "runner-game",
-      "index": "7",
+      "index": "08",
       "links": [
         {
           "href": "https://github.com/lihaozhe013/ece243_runner_game",
