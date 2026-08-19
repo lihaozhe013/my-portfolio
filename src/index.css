@@ -24,6 +24,19 @@
   --font-body: var(--font-serif-en);
   --measure-en: 80ch;
   --measure-zh: 40em;
+  --site-gutter: clamp(1rem, 3vw, 4rem);
+  --site-max-width: 100rem;
+  --fleuron-line: linear-gradient(
+    to right,
+    transparent,
+    var(--border-line) 14%,
+    var(--accent-ink-line) 46%,
+    transparent 46%,
+    transparent 54%,
+    var(--accent-ink-line) 54%,
+    var(--border-line) 86%,
+    transparent
+  );
   color: var(--text-ink);
   background: var(--bg-paper);
   font-synthesis: none;
@@ -50,7 +63,7 @@ body {
   background: var(--bg-paper);
   color: var(--text-ink);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.0625rem;
   line-height: 1.75;
   letter-spacing: 0.015em;
   -webkit-font-smoothing: antialiased;
@@ -133,7 +146,7 @@ a:focus-visible {
 .site-main {
   position: relative;
   z-index: 10;
-  width: min(100% - 3rem, 76rem);
+  width: min(calc(100% - (var(--site-gutter) * 2)), var(--site-max-width));
   margin: 0 auto;
   padding: 1.35rem 0 3rem;
 }
@@ -340,7 +353,6 @@ html[data-locale='zh'] .project-detail-page {
   align-items: end;
   margin-top: 3rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--border-line);
 }
 
 .project-detail-links {
@@ -353,9 +365,38 @@ html[data-locale='zh'] .project-detail-page {
 .markdown-content {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--border-line);
-  font-size: 0.9rem;
+  font-size: inherit;
   line-height: 1.75;
+}
+
+.project-detail-meta,
+.markdown-content {
+  position: relative;
+}
+
+.project-detail-meta::before,
+.markdown-content::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--fleuron-line) center / 100% 1px no-repeat;
+  content: '';
+}
+
+.project-detail-meta::after,
+.markdown-content::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2rem;
+  height: 0.9rem;
+  background: var(--accent-ink);
+  content: '';
+  -webkit-mask: url('./assets/markdown-fleuron.svg') center / contain no-repeat;
+  mask: url('./assets/markdown-fleuron.svg') center / contain no-repeat;
+  transform: translate(-50%, -50%);
 }
 
 .markdown-content h2,
@@ -376,6 +417,27 @@ html[data-locale='zh'] .project-detail-page {
 
 .markdown-content h4 {
   font-size: 1.05rem;
+}
+
+.markdown-content hr {
+  position: relative;
+  height: 1.2rem;
+  margin: clamp(3rem, 6vw, 5rem) 0;
+  border: 0;
+  background: var(--fleuron-line) center / 100% 1px no-repeat;
+}
+
+.markdown-content hr::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2rem;
+  height: 0.9rem;
+  background: var(--accent-ink);
+  content: '';
+  -webkit-mask: url('./assets/markdown-fleuron.svg') center / contain no-repeat;
+  mask: url('./assets/markdown-fleuron.svg') center / contain no-repeat;
+  transform: translate(-50%, -50%);
 }
 
 .markdown-content p,
@@ -622,9 +684,11 @@ html[data-locale='zh'] .project-detail-page {
 
 .markdown-content img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
   margin: 2rem 0;
+  margin-inline: auto;
   border: 1px solid var(--border-line);
 }
 
