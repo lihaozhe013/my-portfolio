@@ -168,5 +168,3 @@ only affected resources wherever possible. This helps retain unknown extensions,
 - **CLI mode for batch scripting.** The project provides a CLI mode that enables
   writing scripts for batch processing of large volumes of similar assets,
   supporting automation of repetitive workflows.
-
-The project is licensed under the MIT License.
