@@ -1,27 +1,27 @@
 {
   "actions": {
-    "backToProjects": "Back to projects",
+    "backToProjects": "返回",
     "close": "Close",
     "codeCopied": "已复制",
     "copyCode": "复制代码",
     "copyFailed": "复制失败",
-    "email": "Write an email",
+    "email": "邮件联系我",
     "exploreFullProject": "查看完整项目",
     "openLink": "Open link",
     "previewProject": "查看项目简介",
     "readDetails": "查看完整项目",
     "readProject": "Read project",
     "resetDiagram": "重置图表",
-    "selectedWorks": "View selected works",
+    "selectedWorks": "查看项目",
     "zoomIn": "放大图表",
     "zoomOut": "缩小图表"
   },
   "contact": {
-    "email": "Email",
+    "email": "邮件",
     "github": "GitHub",
     "introduction": "For a project, a co-op opportunity, or a thoughtful conversation, the best place to find me is email.",
     "linkedin": "LinkedIn",
-    "website": "Personal Website"
+    "website": "个人网站"
   },
   "education": {
     "coursework": {
@@ -46,32 +46,32 @@
     "portraitCaption": ""
   },
   "labels": {
-    "coursework": "Relevant coursework",
-    "featured": "Featured",
-    "fullProject": "完整项目",
+    "coursework": "相关课程",
+    "featured": "特色项目",
+    "fullProject": "查看完整项目",
     "fullProjectContents": "内容概览",
-    "language": "Language",
+    "language": "语言",
     "mermaidDiagram": "Mermaid 图表",
     "mermaidRenderError": "图表渲染失败，下面显示 Mermaid 源码。",
     "projectLinks": "项目链接",
     "readingTime": "约 {{count}} 分钟阅读",
     "renderingDiagram": "正在渲染图表……",
-    "technologies": "Built with"
+    "technologies": "技术栈"
   },
   "nav": {
-    "about": "About",
-    "contact": "Contact",
-    "index": "Index",
-    "label": "Primary navigation",
-    "timeline": "Timeline"
+    "about": "关于",
+    "contact": "联系我",
+    "index": "目录",
+    "label": "主导航",
+    "timeline": "时间线"
   },
   "pages": {
     "about": {
       "introduction": "Computer Engineering student working across software, video games, and interactive projects. I like understanding why something feels intuitive, where complexity hides, and what happens when people do things differently from how it was imagined.\nAway from code: films, music, fiction, games, and esports.",
-      "title": "About Me"
+      "title": "关于我"
     },
     "contact": {
-      "introduction": "The best place to find me is email.",
+      "introduction": "联系我的最佳方式是电子邮件。",
       "title": "Let's make something careful."
     },
     "timeline": {
@@ -147,13 +147,13 @@
     }
   },
   "sections": {
-    "about": "About",
-    "archive": "Project archive",
-    "contact": "Contact",
-    "education": "Education",
-    "selectedWorks": "Selected works",
-    "skills": "Technical index",
-    "timeline": "Timeline"
+    "about": "关于",
+    "archive": "作品",
+    "contact": "联系我",
+    "education": "教育",
+    "selectedWorks": "选集",
+    "skills": "技术栈",
+    "timeline": "时间线"
   },
   "site": {
     "description": "The portfolio of Haozhe Li.",
