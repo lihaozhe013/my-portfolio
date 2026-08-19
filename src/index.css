@@ -309,7 +309,7 @@ html[data-locale='zh'] .body-copy {
 }
 
 .section-block.project-detail-page {
-  padding-top: 0;
+  padding-top: clamp(1.5rem, 4vw, 3rem);
   padding-bottom: 2.5rem;
 }
 
