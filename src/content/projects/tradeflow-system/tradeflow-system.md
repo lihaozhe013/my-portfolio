@@ -8,8 +8,6 @@ financial analysis, and role-based access control into one cohesive workspace.
 Day-to-day transaction data stays connected to every business view that depends
 on it, so dashboards, balances, and reports are always in sync.
 
----
-
 ## At a Glance
 
 |                   |                                                                                       |
@@ -19,8 +17,6 @@ on it, so dashboards, balances, and reports are always in sync.
 | **Architecture**  | Single-page app → REST API → Domain services → Relational store                       |
 | **Key Qualities** | Movement-based inventory · derived financial positions · role-aware UI · multilingual |
 
----
-
 ## Feature Showcase
 
 ### 1. Operations & Master Data
@@ -28,7 +24,7 @@ on it, so dashboards, balances, and reports are always in sync.
 Record purchases and sales (including batch operations), manage products,
 categories, business partners, and partner-specific price history.
 
-<!-- Screenshot: Main operations dashboard showing purchase/sale records and quick-action buttons -->
+<!-- Main operations dashboard showing purchase/sale records and quick-action buttons -->
 
 ![Operations Dashboard](assets/dashboard.png)
 
@@ -36,15 +32,13 @@ categories, business partners, and partner-specific price history.
 - Product catalogue with categories
 - Partner management with historical pricing
 
----
-
 ### 2. Inventory Management
 
 Real-time stock levels backed by a full movement history. The movement ledger
 can be rebuilt from transaction data, keeping inventory recoverable and
 auditable.
 
-<!-- Screenshot: Inventory view with stock levels table and movement history sidebar -->
+<!-- Inventory view with stock levels table and movement history sidebar -->
 
 ![Inventory View](assets/inventory-view.png)
 
@@ -52,15 +46,13 @@ auditable.
 - Low-stock alerts on overview dashboards
 - Repairable ledger derived from transaction history
 
----
-
 ### 3. Financial Visibility
 
 Monitor customer receivables and supplier payables, record payments, and
 reconcile against transaction totals. Invoice grouping supports structured
 billing workflows.
 
-<!-- Screenshot: Finance panel showing receivables/payables summary and payment history -->
+<!-- Finance panel showing receivables/payables summary and payment history -->
 
 ![Receivables Overview](assets/outbound.png) _Receivables overview — outstanding
 amounts per customer._
@@ -78,15 +70,13 @@ line-item breakdown for a single payable._
 - Payment recording with settlement comparison
 - Invoice grouping for account review
 
----
-
 ### 4. Analytics & Reporting
 
 Analyze purchasing and sales across time periods, partners, and products.
 Summarized statistics sit alongside transaction-level detail, and data can be
 exported for external processing.
 
-<!-- Screenshot: Analytics page with date-range selector, summary charts, and export button -->
+<!-- Analytics page with date-range selector, summary charts, and export button -->
 
 ![Analytics Dashboard](assets/analytics-dashboard.png)
 
@@ -94,29 +84,29 @@ exported for external processing.
 - Chart-driven summaries with drill-down detail
 - Spreadsheet export for all operational, financial, and analytical data
 
----
-
 ### 5. Access Control & Governance
 
 JWT-based authentication with role-aware navigation. The interface adapts per
 user role while the backend enforces permissions and records audit events.
 
-<!-- Screenshot: User administration page showing role assignments and audit log -->
+<!-- Login page: JWT-based authentication with role
+selection. -->
 
-![Login Page](assets/login.png) _Login page — JWT-based authentication with role
-selection._
+![Login Page](assets/login.png)
 
-![User Administration](assets/user-admin.png) _User administration — role
-assignments and account management._
+<!-- User administration: role
+assignments and account management. -->
 
-![Audit Log](assets/audit.png) _Audit log — system-wide event tracking for
-governance._
+![User Administration](assets/user-admin.png)
+
+<!-- Audit log: system-wide event tracking for
+governance. -->
+
+![Audit Log](assets/audit.png)
 
 - Reader / Editor / Superuser roles
 - User administration & audit log
 - Multilingual interface with configurable presentation options
-
----
 
 ## Architecture Overview
 
@@ -140,8 +130,6 @@ flowchart LR
 | **Data**          | PostgreSQL via typed Prisma ORM — transactions, master data, movements, audit                |
 | **Derived State** | Inventory totals, overview snapshots, invoice groupings, analytics — refreshed independently |
 
----
-
 ## Deployment & Production
 
 Tradeflow ships with a complete Dockerfile for one-command deployment. The
@@ -158,8 +146,6 @@ orchestration platforms.
 - Persistent storage for database and file exports
 - Compatible with CI/CD pipelines (Argo CD, GitHub Actions, etc.)
 
----
-
 ## Tech Stack
 
 | Layer       | Technologies                                                    |
@@ -170,8 +156,6 @@ orchestration platforms.
 | Security    | JWT, Argon2 hashing, role-based permissions                     |
 | Reporting   | Server-side aggregation, file-backed caches, spreadsheet export |
 
----
-
 ## Project Layout
 
 ```text
@@ -180,8 +164,6 @@ backend/       → Express API — routes, services, Prisma schema
 build-config/  → Metadata & presentation config
 docs/          → Architecture & data-flow references
 ```
-
----
 
 _Tradeflow is designed as a focused, production-ready foundation for businesses
 that need connected trade operations without the overhead of a large enterprise
