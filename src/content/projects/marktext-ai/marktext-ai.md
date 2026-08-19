@@ -55,6 +55,97 @@ The Agent settings support configuring multiple service connections and models, 
 
 After a local edit is completed, the editor marks the changed content and displays the number of added or removed lines along with the modification locations. Users can click the markers to navigate to the changes, or directly undo the most recent Agent edit to restore the Markdown state from before the Agent operation.
 
+### 6. Real-Time Token Usage Monitoring
+
+The Agent panel surfaces token consumption as a live, observable signal rather than a hidden backend metric. While a request is streaming, a real-time output token counter advances with each token the model generates, giving users an immediate sense of verbosity. When the response completes, the panel reports the final usage breakdown and persists it alongside the chat history so it survives reload.
+
+- **Real-time estimated output token count**: While streaming, the Agent panel displays a live-updating estimate of the output tokens generated so far. The counter advances with each token, giving users a direct sense of the model's verbosity—helpful for comparing whether a smaller, faster model or a larger, more thorough model fits the task.
+- **Actual consumed token count after the conversation ends**: When the provider response is finalized, the panel reports the API's final usage breakdown (input tokens, output tokens, and total tokens) for that turn. Per-turn usage accumulates into a per-conversation total, displayed so users can see the cumulative cost of working on the current document.
+- **Model-aware display**: Each response entry shows the model identifier alongside the corresponding token counts. When switching models mid-conversation, the panel clearly separates usage by model, making it easy to compare which model is more efficient for a given task and to understand each model's behavioral profile—whether it prefers concise answers, detailed explanations, or step-by-step reasoning.
+- **Pre-send context estimation**: Before sending a message, the panel estimates input tokens based on conversation history and any attached files, helping users anticipate cost and avoid exceeding the model's context window.
+- **Per-mode breakdown**: Because Answer, Edit Document, and Rewrite Document modes place very different loads on the model, token usage is broken down by mode so users can see, for example, that a Rewrite Document turn consumed far more output tokens than an Answer turn, reinforcing an intuitive understanding of each mode's cost profile.
+
+This feature turns token consumption from an invisible backend metric into an observable signal that helps users choose the right model for the right task and develop a clearer mental model of how different services respond.
+
+## AI Edit Agent Workflow
+
+When a user sends an Edit Document or Rewrite Document request, the Agent orchestrates a multi-step workflow between the renderer, the main process, and the model provider. Two progress representations drive the experience:
+
+- **Transient live progress** (`AiProgressEvent`): Sent over IPC during streaming, driving the current request indicator and incremental step application in the editor.
+- **Persisted status messages** (`AiProgressInfo`): Stored in chat history so request status and model information survive reload—never sent back to the model.
+
+### Request lifecycle
+
+Every request follows the same outer lifecycle:
+
+```mermaid
+stateDiagram-v2
+    [*] --> waiting
+    waiting --> streaming
+    streaming --> validating
+    validating --> agentPlan : plan accepted
+    agentPlan --> agentStep : step applied
+    agentStep --> validating : more steps
+    validating --> responded : complete
+    responded --> localProcessing
+    localProcessing --> completed
+    completed --> [*]
+    validating --> attemptFailed : validation failure
+    attemptFailed --> retrying
+    retrying --> validating
+    validating --> fallback
+    fallback --> validating
+    waiting --> failed
+    streaming --> failed
+    validating --> failed
+    failed --> [*]
+    waiting --> cancelled
+    streaming --> cancelled
+    cancelled --> [*]
+```
+
+Before an `edit` or `rewrite` request starts, the renderer flushes the active editor surface, captures the raw Markdown snapshot and document identity, locks document mutations and tab switching, and sends only usable conversation messages to the main process. Persisted status messages are deliberately excluded from model context.
+
+### Main-process edit state machine
+
+For Edit Document requests, the precise Agent (`runDocumentEditAgent()`) follows a plan-based state machine:
+
+```mermaid
+flowchart TD
+    A[No plan] -->|create_markdown_edit_plan| B{Valid?}
+    B -->|yes| C[Planned]
+    B -->|no| D[Retry]
+    C -->|apply_markdown_edit for first unfinished step| E{Valid?}
+    E -->|yes| F[Step applied] --> C
+    E -->|location or scope failure| G[Plan revision required]
+    E -->|invalid tool or version| D
+    G -->|revise_markdown_edit_plan| H{Valid?}
+    H -->|yes| C
+    H -->|no| D
+    C -->|all steps complete| I[finish_markdown_edit]
+    I --> J[Agent complete]
+```
+
+**Plan creation**: The model creates exactly one plan before applying edits. Each plan step has an ID, description, intent, anchor points, and dependencies. The plan is validated against the current document version—non-empty documents require a valid starting anchor for the first step, while empty documents use an empty-insertion path.
+
+**Incremental step application**: Only the first unfinished plan step may be applied at a time. Each step must use the current document version, match exactly once in the current Markdown, and pass Markdown compatibility checks. After validation, the main process updates its working Markdown, marks the step complete, and emits `agent-step` with before/after snapshots. The renderer applies that snapshot immediately, which is why the document can visibly change before the final response arrives.
+
+**Completion and limits**: The model calls `finish_markdown_edit` only when every plan step is complete and a concise summary is provided. The Agent enforces bounded successful steps, invalid turns, plan revisions, and total runtime as safety boundaries, not additional retries.
+
+### Progressive vs. transactional edits
+
+When at least one Agent step was applied successfully, the renderer follows the **progressive path**: it waits for the final main-process response, records the accumulated change range, appends the assistant summary, and unlocks the editor. Already-applied steps are never replayed, and the final response does not call the full-document revision apply path.
+
+If no Agent step was applied, `applyEdit()` uses the **transactional path** with the revision journal: prepare a revision from the exact raw snapshot, re-check the session and active document, apply to one active editor surface, and commit only after the editor confirms. Complete-document fallback results enter an `awaiting-confirmation` state rather than being applied silently.
+
+### Failure and cancellation
+
+- `attempt-failed`, `retrying`, and `fallback` are non-terminal progress describing model or validation recovery inside the same request.
+- `failed` is terminal—provider failure, invalid tool output, exhausted Agent limits, or stale application failure.
+- `cancelled` is emitted when the user stops an active request or the main process observes cancellation.
+- A chat persistence error does not turn a successful document edit into a failure.
+- A stale document result is never applied; the editor unlocks only after the request settles.
+
 ## Reliability Design
 
 Content generated by the Agent is not written into the document unconditionally:
@@ -73,7 +164,6 @@ These mechanisms make using the Agent feel more like "reviewable edit suggestion
 The project is built on Electron, Vue 3, TypeScript, and Pinia. Agent capabilities use a separation between the main-process service and the renderer-side panel: network requests, API keys, attachment storage, and document revision records are managed by the main process, and the editor interface communicates with it through typed IPC.
 
 Local edits use a structured editing protocol combined with exact text matching, together with revision records to implement commit, discard, and undo. The editor supports both WYSIWYG and source-code modes; Agent edits are applied to the currently active editing surface, keeping both editing approaches consistent.
-
 
 ## Project Highlights
 
