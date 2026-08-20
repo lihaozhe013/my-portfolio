@@ -6,7 +6,7 @@ import { fileURLToPath, URL } from 'node:url';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // GitHub Pages serves this project from the repository subpath in production.
-  base: mode === 'production' ? '/my-portfolio/' : '/',
+  base: mode === 'production' ? '/' : '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
