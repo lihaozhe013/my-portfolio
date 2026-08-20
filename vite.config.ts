@@ -4,9 +4,9 @@ import tailwindcss from '@tailwindcss/vite';
 import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  // GitHub Pages serves this project from the repository subpath in production.
-  base: mode === 'production' ? '/' : '/',
+export default defineConfig({
+  // The site is served from the root of lihaozhe013.github.io.
+  base: '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -31,4 +31,4 @@ export default defineConfig(({ mode }) => ({
     open: true,
     host: true,
   },
-}));
+});
