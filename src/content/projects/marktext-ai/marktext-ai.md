@@ -126,11 +126,44 @@ flowchart TD
     I --> J[Agent complete]
 ```
 
-**Plan creation**: The model creates exactly one plan before applying edits. Each plan step has an ID, description, intent, anchor points, and dependencies. The plan is validated against the current document version—non-empty documents require a valid starting anchor for the first step, while empty documents use an empty-insertion path.
+### Plan creation
 
-**Incremental step application**: Only the first unfinished plan step may be applied at a time. Each step must use the current document version, match exactly once in the current Markdown, and pass Markdown compatibility checks. After validation, the main process updates its working Markdown, marks the step complete, and emits `agent-step` with before/after snapshots. The renderer applies that snapshot immediately, which is why the document can visibly change before the final response arrives.
+The model must create exactly one plan before applying an edit. Each plan step has an ID, description, intent, `startAnchor`, optional `endAnchor`, and dependencies. The host owns the current document version and does not ask the model to repeat it.
 
-**Completion and limits**: The model calls `finish_markdown_edit` only when every plan step is complete and a concise summary is provided. The Agent enforces bounded successful steps, invalid turns, plan revisions, and total runtime as safety boundaries, not additional retries.
+The initial plan is checked against the current document immediately. Steps are organized by edit location rather than semantic topic; adjacent insertions are one `append` or `prepend` step. A plan is capped at 16 steps.
+
+Each step declares `operation: append | prepend | replace`:
+
+- `append` and `prepend` return only new Markdown. The host owns paragraph separators and never simulates insertion by replacing the last line.
+- `replace` is the only operation that uses anchors and exact SEARCH/REPLACE.
+
+The anchor rules are:
+
+- A non-empty document requires a valid `startAnchor` for the first replacement step. Append and prepend steps do not use anchors.
+- An empty document's first replacement step uses `startAnchor: ''` and omits `endAnchor`; append and prepend steps still omit anchors. Its replacement uses the empty `SEARCH` insertion path.
+- Later dependent steps may use an empty `startAnchor` when their target will be created by an earlier step. Before that step becomes active, the host requires a revised plan with a current anchor.
+
+The main process emits `agent-plan` after a plan is accepted. Plan revisions also emit `agent-plan`, with `planRevisionCount` and `successfulSteps` showing that the remaining plan changed rather than starting a new request.
+
+### Incremental step application
+
+Only the first unfinished plan step may be applied. Each replacement `apply_markdown_edit` call must:
+
+- target the host-selected first unfinished plan step;
+- provide exact string `search` and `replace` values;
+- match exactly once in the current Markdown;
+- remain within the step's anchor scope; and
+- pass Markdown compatibility checks.
+
+After validation, the main process updates its working Markdown and version, marks the plan step complete, and emits `agent-step` with the before/after snapshots and a bounded diff. The renderer applies that snapshot immediately to the active editor surface. This is why a progressive request can visibly change the document before the final Agent response arrives.
+
+The Agent tracks location failures separately. Repeated anchor, scope, or match failures require `revise_markdown_edit_plan`; the model must not keep applying edits against a stale plan. Completed steps are immutable and cannot be returned in a revised plan.
+
+Two invalid initial plans trigger the existing complete-document fallback. The fallback is validated and returned for user confirmation; it is never applied silently. After progressive steps have been applied, repeated revision failures terminate the request while preserving those successful steps.
+
+### Completion and limits
+
+The result carries the final Markdown, edit summary, recovery metadata, and a host-generated summary. The Agent also enforces bounded successful steps, invalid turns, plan revisions, and total runtime. These limits are safety boundaries, not additional model retries.
 
 ### Progressive vs. transactional edits
 
